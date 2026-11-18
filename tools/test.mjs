@@ -144,7 +144,7 @@ const cases = [
   ['fever child', ['pedsfever', 'pedsfeverdc'], 2],
   ['bronchiolitis', ['bronchio'], 1],
   ['croup', ['croup'], 1],
-  ['pecarn', ['pedshead'], 1],
+  ['pecarn', ['pecarnu2', 'pecarn2'], 1],
   ['ear infection', ['aommdm'], 1],
   ['otitis media', ['aommdm'], 1],
   ['red eye', ['eyemdm'], 1],

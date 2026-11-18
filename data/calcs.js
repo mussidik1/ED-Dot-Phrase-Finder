@@ -4,7 +4,7 @@
 
 add("Trauma & MSK", [
   ["cchr", "Score", "Canadian CT Head Rule", "canadian ct head|canadian ct head rule|cchr|ct head rule|minor head injury|head injury|head ct decision", ["S09.90XA"],
-`Canadian CT Head Rule (applies to GCS 13–15 after witnessed LOC, amnesia or disorientation; age ≥16; not on anticoagulants; no seizure):
+`Canadian CT Head Rule (applies only to GCS 13–15 after witnessed LOC, amnesia or disorientation; age ≥16; not on anticoagulants; no seizure; otherwise the rule does not apply):
 High risk: GCS <15 at 2 h ***; suspected open/depressed skull fracture ***; signs of basilar skull fracture ***; vomiting ≥2 episodes ***; age ≥65 ***.
 Medium risk: amnesia before impact ≥30 min ***; dangerous mechanism ***.
 Result: {no risk factors: CT not indicated by rule / CT indicated: ***}.`],
@@ -74,7 +74,7 @@ calc('ccspine', {
     { label: 'Evidence of intoxication', short: 'Intoxication', opts: YN },
     { label: 'Painful distracting injury', short: 'Distracting injury', opts: YN },
   ],
-  bands: [[0, 'low risk; C-spine imaging not required'], [99, 'not low risk; image the cervical spine or apply the Canadian C-Spine Rule']],
+  bands: [[0, 'low risk; C-spine imaging not required'], [99, 'not low risk; image the cervical spine (NEXUS sensitivity is lower in older adults)']],
 });
 
 calc('cchr', {

@@ -100,7 +100,8 @@ function reviewHTML(code) {
   if (src && src.kind === 'mine') return `<p class="review">Your phrase${src.pack ? ` from the ${escapeHtml(src.pack)} pack` : ''}, saved on this device only.</p>`;
   if (src && src.kind === 'community') return `<p class="review">Shared by ${escapeHtml(src.by || 'a clinician')} and approved for the library. Not independently reviewed.</p>`;
   const r = REVIEWS[code];
-  return r ? `<p class="review ok">Reviewed by ${escapeHtml(r[0])} · ${escapeHtml(r[1])}</p>` : '<p class="review">Not yet clinically reviewed. Check it before you sign.</p>';
+  const es = /\(Spanish\)$/.test(byCode.get(code)?.name || '') ? '<p class="review warn">Have a certified medical interpreter or translator review this Spanish text before routine use.</p>' : '';
+  return es + (r ? `<p class="review ok">Reviewed by ${escapeHtml(r[0])} · ${escapeHtml(r[1])}</p>` : '<p class="review">Not yet clinically reviewed. Check it before you sign.</p>');
 }
 
 // The open card: calculator (score phrases), fill-in panel with copy buttons, review status, then diagnosis codes.
@@ -208,8 +209,8 @@ function renderResults(q) {
       <p>Try a shorter word, an abbreviation (CP, SOB, AFib) or an ICD-10 code.</p>
       ${category >= 0 ? '<p><button class="linkish" type="button" data-all="1">Search all sections</button></p>' : ''}
       <p><button class="linkish" type="button" data-new="1">Write your own phrase for this</button></p>
+      ${gapText(q) ? `<p><button class="linkish" type="button" data-gap="1">Tell the app owner this search found nothing</button><br><span class="small">Sends only: “${escapeHtml(gapText(q))}”. Don’t send patient names.</span></p>` : ''}
     </div>`;
-    reportGap(q);
     return;
   }
   statusEl.textContent = hits.length >= 60 ? `Top 60 matches${where}` : `${hits.length} match${hits.length === 1 ? '' : 'es'}${where}`;
@@ -356,6 +357,8 @@ on(resultsEl, 'click', (ev) => {
   const del = t.closest('[data-delete]');
   if (del) { deleteMine(del.dataset.delete); return; }
   if (t.closest('[data-new]')) { openEditor(null, qEl.value.trim()); return; }
+  const gapBtn = t.closest('[data-gap]');
+  if (gapBtn) { reportGap(qEl.value.trim(), gapBtn); return; }
   const chip = t.closest('.chip');
   if (chip) { qEl.value = chip.dataset.q; render(); return; }
   if (t.closest('[data-hide-card]')) { store.set('installCardHidden', true); renderHome(); return; }
@@ -497,6 +500,8 @@ async function saveEditor(ev) {
   saveMine();
   if (f.elements.share.checked) {
     if (!f.elements.agree.checked) { errEl.textContent = 'To share, confirm the phrase has no patient information.'; return; }
+    const phi = /\b\d{1,2}[\/-]\d{1,2}[\/-]\d{2,4}\b|\b\d{6,}\b|\b(MRN|DOB|SSN)\b|\b(Mr|Mrs|Ms|Miss)\.? [A-Z][a-z]+/.test(`${p.title} ${p.text}`);
+    if (phi) { errEl.textContent = 'This looks like it may contain patient details (a date, a long number, MRN/DOB, or a name). Remove them before sharing; your copy was not saved yet.'; return; }
     const ok = await submitPhrase(p, f.elements.by.value.trim());
     toast(ok ? 'Saved, and sent for review' : 'Saved on this device. Sending failed (offline?); try Share again later.');
   } else toast(`Saved <span class="t-code">.${escapeHtml(p.dot)}</span> to My phrases`);
@@ -561,8 +566,6 @@ function syncLibraryInfo() {
   if (el) el.textContent = mine.length ? `${mine.length} phrase${mine.length === 1 ? '' : 's'} saved on this device.` : 'None yet. Open any card and tap “Make my version”, or import a file.';
   const c = $('#community-count');
   if (c) c.textContent = community.length ? `${community.length} approved shared phrase${community.length === 1 ? '' : 's'} loaded.` : 'No shared phrases loaded yet.';
-  const g = $('#share-gaps');
-  if (g) g.checked = !!store.get('shareGaps', false);
 }
 
 // ---------- shared library (Supabase): approved phrases, submissions, empty-search reports ----------
@@ -591,19 +594,17 @@ async function submitPhrase(p, by) {
     return res.ok;
   } catch { return false; }
 }
-// Opt-in only. Sends just the search words (numbers stripped, max 60 characters), once per search per visit.
+// Reporting a search that found nothing is manual: the user sees the exact text first and taps to send it.
 const gapSent = new Set();
-let gapTimer = 0;
-function reportGap(q) {
-  clearTimeout(gapTimer);
-  if (!store.get('shareGaps', false)) return;
-  const clean = q.toLowerCase().replace(/[0-9]/g, '').replace(/[^a-z\s/&'-]/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 60);
-  if (clean.length < 3 || gapSent.has(clean)) return;
-  gapTimer = setTimeout(() => {
-    if (qEl.value.trim().toLowerCase().replace(/[0-9]/g, '').replace(/[^a-z\s/&'-]/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 60) !== clean) return;
-    gapSent.add(clean);
-    api('search_gaps', { method: 'POST', headers: { Prefer: 'return=minimal' }, body: JSON.stringify({ query: clean }) }).catch(() => {});
-  }, 2500);
+const gapText = (q) => { const c = q.toLowerCase().replace(/[0-9]/g, '').replace(/[^a-z\s/&'-]/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 60); return c.length >= 3 ? c : ''; };
+async function reportGap(q, btn) {
+  const clean = gapText(q);
+  if (!clean || gapSent.has(clean)) { toast('Already sent. Thank you.'); return; }
+  try {
+    const res = await api('search_gaps', { method: 'POST', headers: { Prefer: 'return=minimal' }, body: JSON.stringify({ query: clean }) });
+    if (!res.ok) throw new Error();
+    gapSent.add(clean); toast('Sent. Thank you.'); if (btn) btn.disabled = true;
+  } catch { toast('Couldn’t send (offline?).'); }
 }
 
 // ---------- display settings (colors and text size) ----------
@@ -631,7 +632,6 @@ on(aboutEl, 'change', (ev) => {
   const t = ev.target;
   if (t.name === 'theme') { theme = t.value; store.set('theme', theme); applyTheme(); }
   if (t.name === 'textSize') { textSize = Number(t.value); store.set('textSize', textSize); applyTextSize(); }
-  if (t.id === 'share-gaps') store.set('shareGaps', t.checked);
 });
 if (lightQuery) {
   const follow = () => { if (theme === 'auto') applyTheme(); };
@@ -789,5 +789,9 @@ if (location.hash === '#install') {
 render();
 syncLibraryInfo();
 loadCommunity();
+// Typed blanks never outlive the screen: clear them when the app goes to the background.
+const clearFills = () => resultsEl.querySelectorAll('.fill[data-drawn]').forEach((box) => { box.innerHTML = ''; delete box.dataset.drawn; const d = box.closest('details'); if (d) d.open = false; });
+document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') clearFills(); });
+window.addEventListener('pagehide', clearFills);
 window.addEventListener('online', loadCommunity);
 if (!qEl.value && !isIOS && window.matchMedia('(hover: hover)').matches) qEl.focus();

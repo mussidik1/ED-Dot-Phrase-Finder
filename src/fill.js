@@ -24,7 +24,7 @@ export function parse(text) {
 const blankRe = /\*\*\*/g;
 
 function blankInput(key) {
-  return `<input class="fill-in" type="text" data-key="${key}" placeholder="***" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Blank">`;
+  return `<input class="fill-in" type="text" data-key="${key}" placeholder="***" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" enterkeyhint="next" aria-label="Blank">`;
 }
 
 // Option text with its own blanks turned into inputs (keys nest under the choice's key).

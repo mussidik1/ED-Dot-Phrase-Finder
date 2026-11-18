@@ -3,11 +3,12 @@
 add("ID & Sepsis", [
   ["*sepsismdm", "MDM", "Sepsis / septic shock", "sepsis|septic shock|a41.9|r65.21|r65.20|severe sepsis|sep-1|sirs|bacteremia|lactate", ["A41.9", "R65.20", "R65.21"],
 `MDM: ***-year-old with suspected sepsis from {pulmonary/urinary/skin/intra-abdominal/unknown} source. Time zero ***.
-Vitals: T ***, HR ***, BP ***, MAP ***, RR ***, SpO₂ ***. Lactate *** (repeat ***).
-Blood cultures ×2 drawn at *** before antibiotics. Antibiotics *** started at ***.
-{30 mL/kg crystalloid (*** mL, based on *** weight) given for hypotension or lactate ≥4 / reduced volume because ***}.
-{Persistent hypotension: norepinephrine started at ***; septic shock.}
-Source control: ***. Disposition: ***. Critical care time *** minutes.`],
+Vitals: T ***, HR ***, BP ***, MAP ***, RR ***, SpO₂ ***. Initial lactate *** at ***; {repeat lactate *** at *** (required when initial >2) / not repeated: initial ≤2}.
+Organ dysfunction: ***.
+Blood cultures ×2 drawn at *** {before antibiotics / after antibiotics because ***}. Antibiotics *** started at ***.
+{30 mL/kg crystalloid (*** mL, based on *** weight) completed at *** for *** (hypotension or lactate ≥4) / reduced volume because ***}.
+{Septic shock (*** — hypotension persisting after fluids or lactate ≥4); norepinephrine started at ***; reassessment documented after fluids.}
+Source control: ***. Disposition: ***. {Critical care: see critical care statement.}`],
   ["sepsisreassess", "Exam", "Sepsis reassessment (SEP-1)", "sepsis reassessment|sep-1|sep1|perfusion exam|septic shock reassessment|fluid reassessment", [],
 `Sepsis reassessment at *** after initial fluid resuscitation: I reviewed vital signs and performed a focused exam. BP ***, HR ***, SpO₂ ***, capillary refill ***, peripheral pulses ***, skin ***, mental status ***, cardiopulmonary exam ***. {Repeat lactate ***.}`],
   ["*cellmdm", "MDM", "Cellulitis / abscess", "cellulitis|l03.90|l03.115|abscess|l02.91|skin infection|ssti|boil|mrsa", ["L03.90", "L02.91"],
@@ -76,9 +77,10 @@ add("Endo & Heme", [
   ["*dkamdm", "MDM", "DKA / hyperglycemia", "dka|diabetic ketoacidosis|e10.10|e11.10|hyperglycemia|r73.9|e11.65|high blood sugar|hhs|e11.00|hyperosmolar", ["E10.10", "E11.10", "E11.65", "E11.00"],
 `MDM: ***-year-old with {type 1/type 2} diabetes with glucose ***, pH ***, bicarbonate ***, anion gap ***, beta-hydroxybutyrate ***; consistent with {DKA (mild/moderate/severe) / HHS / hyperglycemia without DKA}.
 Precipitant search: infection, missed insulin, MI, pancreatitis, pregnancy, SGLT2 inhibitor (euglycemic DKA), ***.
-Potassium *** — {insulin held until K ≥3.3 / ***}.
+2024 consensus definition: glucose ≥200 mg/dL (or known diabetes), ketones (beta-hydroxybutyrate ≥3.0 mmol/L), pH <7.3 and/or bicarbonate <18.
+Potassium *** — {insulin held and potassium replaced until K ≥3.5 / K ≥3.5, insulin started}.
 Treatment: IV fluids ***, insulin infusion *** units/kg/h started at ***, potassium repletion ***, dextrose added when glucose <250.
-Disposition: {ICU/stepdown}. Critical care time *** minutes.`],
+Disposition: {ICU/stepdown}. {Critical care: see critical care statement.}`],
   ["hypogly", "MDM", "Hypoglycemia", "hypoglycemia|e16.2|e11.649|low blood sugar|insulin reaction|sulfonylurea", ["E16.2", "E11.649"],
 `MDM: ***-year-old with glucose *** {found by EMS/***}. Treated with {D50/D10/glucagon/oral glucose} with return to baseline.
 Cause: {insulin dosing/missed meal / sulfonylurea / alcohol / sepsis / renal or liver failure / ***}.
@@ -99,6 +101,6 @@ Plan: {transfuse *** units PRBC; consent obtained / no transfusion indicated, ir
   ["anticoagbleed", "MDM", "Bleeding on anticoagulation / reversal", "bleeding on anticoagulation|supratherapeutic inr|r79.1|elevated inr|warfarin|eliquis|apixaban|reversal|kcentra|d68.32|anticoagulant bleeding", ["R79.1", "D68.32"],
 `MDM: ***-year-old on {warfarin/apixaban/rivaroxaban/dabigatran/***} (last dose ***) with ***. INR ***.
 Bleeding: {major/life-threatening: *** / minor}.
-Reversal: {4F-PCC *** units/kg + vitamin K 10 mg IV / andexanet *** / idarucizumab 5 g / vitamin K *** PO / held next dose only}.
+Reversal: {warfarin, major bleed: 4F-PCC *** units (INR-based 25/35/50 units/kg or fixed dose per protocol) + vitamin K 10 mg IV / apixaban or rivaroxaban, major bleed: 4F-PCC 50 units/kg (or fixed dose per protocol) or andexanet *** if available locally / dabigatran: idarucizumab 5 g IV / supratherapeutic INR without major bleed: hold warfarin ± vitamin K *** mg PO / held next dose only}.
 Indication for anticoagulation (***) and thrombotic risk discussed. Disposition: ***.`],
 ]);

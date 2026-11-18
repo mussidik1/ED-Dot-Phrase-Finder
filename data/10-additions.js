@@ -10,21 +10,21 @@ Assessment: {acute gout flare / septic arthritis not excluded: ***}.
 Treatment: {NSAID *** / colchicine *** / prednisone ***} (chosen per renal function, GI risk and comorbidities). Continue home urate-lowering therapy if already taking. PCP/rheumatology follow-up; return for fever or worsening swelling.`],
   ["*bitemdm", "MDM", "Animal bite", "dog bite|w54.0xxa|cat bite|w55.01xa|animal bite|bite wound|t14.8xxa|rabies|human bite|w50.3xxa", ["W54.0XXA", "W55.01XA", "T14.8XXA"],
 `MDM: ***-year-old bitten by {own/known/unknown/stray} {dog/cat/***} on the *** at ***.
-Wound: *** cm {puncture/laceration/avulsion}. Explored: no tendon, joint, bone or neurovascular involvement; no foreign body (tooth). {X-ray ***.}
+Wound: *** cm {puncture/laceration/avulsion}. Explored: {no tendon, joint, bone or neurovascular involvement; no foreign body (tooth) / ***}. {X-ray ***.}
 Considered closed-space hand infection, septic arthritis/tenosynovitis, fracture and crush injury.
 Irrigated with *** mL normal saline. Closure: {left open / loosely approximated / primary closure of facial wound}.
 Antibiotic prophylaxis: {amoxicillin-clavulanate ×3–5 days for cat bite, hand/face, deep puncture, crush, or immunocompromise / not indicated because ***}.
-Tetanus: {up to date / Tdap given}.
-Rabies: {animal available for 10-day observation; reported to animal control / post-exposure prophylaxis started: RIG *** IU and vaccine dose 1 / not indicated: ***}. Wound check in 48 h.`],
+Tetanus: {up to date / Tdap or Td given / Tdap or Td plus TIG 250 units IM (tetanus-prone wound, fewer than 3 prior doses or unknown)}.
+Rabies: {dog, cat or ferret available for 10-day observation; reported to animal control / post-exposure prophylaxis started: HRIG 20 IU/kg (*** IU) infiltrated into and around the wound, remainder IM at a site away from the vaccine; rabies vaccine dose 1 deltoid today, then days 3, 7 and 14 (add day 28 if immunocompromised) / bat or wild carnivore: PEP unless the animal tests negative / not indicated: ***}. Wound check in 48 h.`],
   ["*scfe", "MDM", "Pediatric limp / SCFE", "scfe|slipped capital femoral epiphysis|m93.003|limp|r26.89|hip pain child|knee pain child|transient synovitis|m67.351|septic hip|perthes", ["M93.003", "R26.89", "M67.351"],
 `MDM: ***-year-old with *** of {limp/hip pain/thigh or knee pain}. Trauma: ***. Fever: ***. Able to bear weight: ***.
-Considered SCFE (hip or knee pain in adolescent; obligate external rotation with hip flexion: ***), septic arthritis (Kocher criteria ***), transient synovitis, Legg-Calvé-Perthes, osteomyelitis, fracture (including toddler's fracture), and malignancy.
+Hip examined for knee pain: ***. Considered SCFE (obligate external rotation with hip flexion: ***), septic arthritis (Kocher criteria ***), transient synovitis, Lyme arthritis, Legg-Calvé-Perthes, osteomyelitis, fracture (including toddler's fracture; maltreatment if no plausible history), and malignancy.
 X-ray AP and frog-leg lateral of both hips: ***. {Labs: WBC ***, ESR ***, CRP ***.} {Hip US: effusion ***.}
 Assessment: ***.
 {SCFE: non-weight-bearing, orthopedics (Dr. ***) consulted for urgent fixation / Transient synovitis: NSAIDs, return precautions, recheck in 24–48 h}.`],
   ["nursemaid", "Procedure", "Radial head subluxation (nursemaid's elbow) reduction", "nursemaids elbow|nursemaid elbow|radial head subluxation|s53.031a|pulled elbow|elbow child not using arm", ["S53.031A", "S53.032A"],
 `Procedure: reduction of radial head subluxation, {right/left}
-History of {pull/lift/fall} at ***, child holding arm pronated and refusing to use it. No swelling, deformity, bruising or point tenderness to suggest fracture.
+History of {pull/lift} at ***, child holding arm pronated and refusing to use it. Swelling, deformity, bruising or point tenderness: {none / ***}. {Fall, unwitnessed or unclear mechanism: X-ray and maltreatment screen considered: ***.}
 Technique: {hyperpronation / supination-flexion} with thumb over the radial head; palpable click felt: {yes/no}.
 Result: child using arm normally at *** min after reduction. {X-ray not indicated / X-ray *** because not using arm after 2 attempts.}
 Caregiver taught to avoid lifting or pulling by the hands and wrists; recurrence is common before age 5.`],
@@ -42,7 +42,7 @@ Removal: {positive pressure ("parent's kiss") / suction / alligator forceps / cu
 {Primary/permanent} tooth. Injury: {Ellis I enamel / Ellis II dentin / Ellis III pulp exposed / avulsion / luxation}.
 Considered aspiration of tooth fragment (CXR if missing ***), alveolar or mandible fracture, and intraoral laceration.
 {Avulsed permanent tooth: extraoral time ***; stored in ***; rinsed and reimplanted at ***, splinted to adjacent teeth. Primary teeth are not reimplanted.}
-{Exposed dentin/pulp: covered with ***.} Analgesia ***. Tetanus ***. {Antibiotic for reimplanted tooth: ***.}
+{Exposed dentin/pulp: covered with ***.} Analgesia ***. Tetanus: {up to date / Tdap or Td given / plus TIG (tetanus-prone, fewer than 3 prior doses or unknown)}. {Antibiotic for reimplanted tooth: ***.}
 Dentist follow-up within {24 h / ***}; soft diet.`],
 ]);
 
@@ -68,7 +68,7 @@ add("General", [
 - Haga una cita con *** en {2 a 3 días / 1 semana}.
 - Siga tomando sus medicinas de siempre. ***
 
-Llame al 911 (no maneje usted mismo) si el dolor de pecho empeora o dura más de unos minutos, si el dolor se pasa al brazo, la mandíbula o la espalda, si le falta el aire, suda, se desmaya, o siente el corazón muy rápido o irregular.`],
+Llame al 911 (no maneje usted mismo) si el dolor de pecho empeora o dura más de unos minutos, si el dolor se corre o se extiende al brazo, la mandíbula o la espalda, si le falta el aire, suda, se desmaya, o siente el corazón muy rápido o irregular.`],
   ["abddces", "Discharge", "Abdominal pain, discharge (Spanish)", "spanish|español|espanol|dolor de estómago|dolor abdominal|abdominal pain spanish|discharge spanish|abdominal pain", ["R10.9"],
 `Hoy no encontramos una causa peligrosa de su dolor de estómago. Algunas enfermedades, como la apendicitis temprana, pueden tardar en aparecer, así que vigílese con cuidado.
 
@@ -77,23 +77,26 @@ Llame al 911 (no maneje usted mismo) si el dolor de pecho empeora o dura más de
 
 Regrese de inmediato si el dolor empeora o se mueve al lado derecho de abajo, si tiene fiebre, vómitos que no paran, sangre en el vómito o en las heces, heces negras, el estómago duro o hinchado, o si se desmaya.`],
   ["pedsfeverdces", "Discharge", "Pediatric fever, discharge (Spanish)", "spanish|español|espanol|fiebre|fiebre niño|pediatric fever spanish|discharge spanish|peds fever", ["R50.9"],
-`Su niño tiene fiebre, probablemente por un virus. La fiebre en sí no hace daño; es la manera en que el cuerpo combate la infección.
+`Su hijo o hija tiene fiebre, probablemente por un virus. La fiebre en sí no hace daño; es la manera en que el cuerpo combate la infección.
 
-- Acetaminofén (Tylenol): *** mL de *** cada 4 a 6 horas si lo necesita (no más de 5 dosis en 24 horas).
-- {Ibuprofeno (Motrin/Advil, desde los 6 meses): *** mL de *** cada 6 a 8 horas si lo necesita.}
+- Acetaminofén (Tylenol): *** mg = *** mL del líquido de 160 mg/5 mL, cada 4 a 6 horas si lo necesita (no más de 5 dosis en 24 horas).
+- {Ibuprofeno (Motrin/Advil), desde los 6 meses: *** mg = *** mL del líquido *** (para niños de 100 mg/5 mL o para bebés de 50 mg/1.25 mL), cada 6 a 8 horas si lo necesita.}
+- Use la jeringa o el vasito que viene con la medicina, no una cuchara de cocina. Revise la concentración en la caja; el ibuprofeno para bebés y el de niños son diferentes.
 - Dele líquidos seguido. Cuente los pañales mojados; debe tener al menos uno cada 6 a 8 horas.
-- Lleve a su niño al pediatra en *** días, o antes si la fiebre dura más de 3 días.
+- Lleve a su hijo o hija al pediatra en *** días, o antes si la fiebre dura más de 3 días.
 
-Regrese de inmediato si su niño tiene dificultad para respirar, el cuello rígido, un sarpullido que no se quita al apretarlo, menos pañales mojados, mucho sueño o le cuesta despertar, una convulsión, o si usted siente que está muy enfermo.`],
+Si su bebé tiene menos de 2 meses y una temperatura de 100.4°F (38°C) o más, regrese de inmediato.
+
+Regrese de inmediato si su hijo o hija tiene dificultad para respirar, el cuello rígido, manchas en la piel que siguen rojas o moradas al apretarlas, menos pañales mojados, mucho sueño o le cuesta despertar, una convulsión, o si usted siente que su hijo o hija está muy enfermo.`],
   ["gastrodces", "Discharge", "Vomiting and diarrhea, discharge (Spanish)", "spanish|español|espanol|vómito|vomito|diarrea|gastroenteritis spanish|discharge spanish|gastroenteritis", ["A09"],
 `Lo más probable es que tenga un virus del estómago. Por lo general mejora en 2 a 3 días.
 
-- Tome traguitos pequeños seguido: agua, suero oral o bebidas deportivas. Empiece con 1 a 2 onzas cada 10 a 15 minutos.
+- Tome traguitos pequeños seguido: suero oral (como Pedialyte), agua o, en adultos, bebidas deportivas. Empiece con 1 a 2 onzas cada 10 a 15 minutos.
 - Use *** para las náuseas como se le recetó.
 - Coma comidas sencillas cuando se sienta listo.
 - Lávese bien las manos; el virus se contagia fácilmente.
 
-Regrese si los vómitos no paran, no ha orinado en 8 horas, tiene sangre en el vómito o en las heces, heces negras, dolor fuerte de estómago, fiebre alta, o se siente débil, mareado o confundido.`],
+Regrese si los vómitos no paran, no ha orinado en 8 horas, tiene sangre en el vómito o en las heces (popó), heces negras, dolor fuerte de estómago, fiebre alta, o se siente débil, mareado o confundido.`],
   ["backdces", "Discharge", "Back pain, discharge (Spanish)", "spanish|español|espanol|dolor de espalda|back pain spanish|discharge spanish|back pain", ["M54.50"],
 `Lo más probable es que su dolor de espalda venga de un músculo o una articulación lastimada. La mayoría mejora en 2 a 6 semanas.
 

@@ -27,7 +27,7 @@ Disposition: {discharged with steroid course, albuterol, controller review, PCP 
 
 - Take *** (steroid) daily for *** days, even if you feel better.
 - Use albuterol, 2–4 puffs with a spacer every 4 hours as needed. If you need it more than every 4 hours, return.
-- Keep using your daily controller inhaler: ***.
+- Use your controller inhaler with a steroid in it every day: ***. {Start one if you don't have one.}
 - Avoid smoke and other triggers.
 - See *** within 1 week.
 
@@ -36,7 +36,7 @@ Return or call 911 for trouble talking in full sentences, lips or fingertips tur
 `MDM: ***-year-old with fever, cough and *** with CXR showing ***, consistent with community-acquired pneumonia.
 Considered viral pneumonia, PE, CHF, aspiration, TB and malignancy. Sepsis screen: ***. Lactate ***.
 CURB-65 *** / PSI class ***.
-Treatment: *** (antibiotics per local guidance and allergies/comorbidities).
+Treatment (ATS/IDSA 2019, adjusted for local resistance and allergies): {outpatient, no comorbidities: amoxicillin or doxycycline / outpatient with comorbidities: amoxicillin-clavulanate or cephalosporin plus macrolide or doxycycline, or a respiratory fluoroquinolone / inpatient: ceftriaxone plus azithromycin, or a respiratory fluoroquinolone / ***}.
 Disposition: {discharge with ***, follow-up in 48–72 h, return precautions / admit to *** for ***}.`],
   ["curb65", "Score", "CURB-65", "curb65|curb 65|pneumonia severity|pneumonia|psi", [],
 `CURB-65: confusion *** / BUN >19 mg/dL *** / RR ≥30 *** / SBP <90 or DBP ≤60 *** / age ≥65 ***.

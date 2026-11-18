@@ -192,13 +192,13 @@
         <h3>Shared library</h3>
         <p>When you save a phrase you can also send it to the shared library. Each one is reviewed before anyone else sees it. Approved phrases appear under “Community”.</p>
         <p id="community-count"></p>
-        <label class="check"><input type="checkbox" id="share-gaps"> <span>Help improve the app: when a search finds nothing, send just the search words (numbers removed). Off by default; never includes anything else.</span></label>
+        <p>When a search finds nothing, you can tap to tell the app owner. You see the exact words before anything is sent.</p>
 
         <h3>Before you sign</h3>
         <p>These are original templates written for this app. They are not the official SmartPhrases of any hospital, health system or physician group. They are documentation aids, not clinical guidelines: confirm drug doses, decision rules and local protocols, and delete anything you didn’t do. Each card shows whether it has had a named clinical review.</p>
         <p>Spanish discharge instructions should be checked by a certified medical interpreter before routine use.</p>
         <p>Diagnosis codes are typical ICD-10-CM examples from the CDC code files, not a complete list. The right code comes from the documentation.</p>
-        <p>What you type into blanks is never saved and never leaves this device. Stars, recent phrases and your own phrases stay on this device. The only things ever sent are phrases you choose to share, and (if you turn it on) empty search words. Don’t enter patient identifiers anywhere.</p>
+        <p>What you type into blanks is never saved, never leaves this device, and is cleared when you switch away from the app. Copied text stays on your phone’s clipboard (and may sync to your other devices), so paste it promptly. Stars, recent phrases and your own phrases stay on this device. The only things ever sent are phrases you choose to share and empty-search words you choose to report. Don’t enter patient identifiers anywhere.</p>
         <div class="web-only">
           <h3>Use it like an app</h3>
           <p>Add it to your Home Screen for one-tap access and offline use.</p>
@@ -232,7 +232,7 @@
         <label>Template <span class="hint">*** for blanks, {this / that} for choices</span><textarea name="text" rows="12" maxlength="6000" required></textarea></label>
         <label class="check"><input type="checkbox" name="share"> <span>Also send to the shared library for review</span></label>
         <div class="share-fields" hidden>
-          <label>Your name and role (optional, shown if approved)<input name="by" type="text" maxlength="120" placeholder="e.g. A. Smith, MD, Emergency Medicine"></label>
+          <label>Your name and role (optional; shown publicly if approved)<input name="by" type="text" maxlength="120" placeholder="e.g. A. Smith, MD, Emergency Medicine"></label>
           <label class="check"><input type="checkbox" name="agree"> <span>This phrase contains no patient information.</span></label>
         </div>
         <p class="form-error" role="alert"></p>

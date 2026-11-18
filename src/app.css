@@ -703,3 +703,5 @@ main { flex: 1 0 auto; width: 100%; padding: 4px calc(12px + var(--safe-r)) 24px
 .btn-row { display: flex; flex-wrap: wrap; gap: 8px; }
 .file-btn { cursor: pointer; display: inline-flex; align-items: center; }
 .small { font-size: calc(14px * var(--fs)); color: var(--muted); }
+
+.review.warn { color: var(--warn); font-weight: 600; }

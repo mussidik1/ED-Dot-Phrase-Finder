@@ -5,7 +5,7 @@ add("GU & Renal", [
 `MDM: ***-year-old with {right/left} flank pain radiating to the groin ***.
 Considered ureterolithiasis, pyelonephritis/infected stone, AAA (age ***), renal infarct, appendicitis/diverticulitis, biliary disease, {ectopic pregnancy, ovarian torsion} and testicular torsion.
 UA ***; creatinine ***; {hCG ***}. Imaging: {CT: *** mm stone at *** with *** hydronephrosis / bedside US: ***}.
-No signs of infection or AKI. Treatment: {ketorolac ***, ***}. Pain controlled, tolerating PO.
+Infection or AKI: {no signs / ***}. Treatment: ***. Reassessment: pain {controlled / ***}, tolerating PO {yes / no}.
 Plan: {tamsulosin for distal stone 5–10 mm}, analgesia, strainer, urology follow-up. Return for fever, uncontrolled pain or vomiting.`],
   ["stonedc", "Discharge", "Kidney stone, discharge", "kidney stone discharge|renal colic|kidney stone|nephrolithiasis|flank pain", ["N20.1"],
 `You have a kidney stone. Most stones this size pass on their own within a few weeks.
@@ -16,7 +16,7 @@ Plan: {tamsulosin for distal stone 5–10 mm}, analgesia, strainer, urology foll
 
 Return now for fever or chills, pain not controlled by your medicine, vomiting that keeps you from taking fluids or medicine, or very little urine.`],
   ["*utimdm", "MDM", "Urinary tract infection / cystitis", "uti|urinary tract infection|cystitis|n39.0|n30.00|dysuria|r30.0|burning urination|bladder infection", ["N39.0", "N30.00"],
-`MDM: ***-year-old with dysuria, frequency and urgency for ***. No fever, flank pain or CVA tenderness. {Not pregnant (hCG negative).} No vaginal discharge reported; {STI risk ***}.
+`MDM: ***-year-old with dysuria, frequency and urgency for ***. Fever, flank pain or CVA tenderness: {none / ***}. {Not pregnant (hCG negative).} Vaginal discharge: {none reported / ***}; {STI risk ***}.
 Considered pyelonephritis, STI/urethritis, vaginitis, nephrolithiasis and prostatitis.
 UA ***; {culture sent}.
 Assessment: uncomplicated cystitis. Treatment: *** (per allergies, prior cultures and local resistance). Return for fever, flank pain or vomiting.`],
@@ -34,7 +34,7 @@ Disposition: ***.`],
   ["hyperk", "MDM", "Hyperkalemia", "hyperkalemia|e87.5|high potassium|elevated potassium|k high", ["E87.5"],
 `MDM: potassium *** (hemolysis {not} reported). ECG: {no peaked T waves, QRS widening or arrhythmia / ***}.
 Cause: {AKI/CKD, ACE-I/ARB/spironolactone, missed dialysis, ***}.
-Treatment: {calcium gluconate *** for ECG changes}, insulin *** units IV with dextrose ***, albuterol *** mg nebulized, {sodium zirconium cyclosilicate/patiromer ***}, {furosemide ***}, {dialysis: nephrology contacted}.
+Treatment: {calcium gluconate 1–3 g IV (or calcium chloride 1 g via large or central line) for ECG changes}, regular insulin {10 / 5 (ESRD or low glucose)} units IV with dextrose 25 g if glucose <250, albuterol 10–20 mg nebulized, {sodium zirconium cyclosilicate/patiromer ***}, {furosemide *** if making urine}, {bicarbonate only for metabolic acidosis}, {dialysis: nephrology contacted}.
 Repeat K ***; glucose checks q1h ×4–6 h. Disposition: ***.`],
   ["*torsionmdm", "MDM", "Testicular pain / torsion", "testicular torsion|testicular pain|n44.00|scrotal pain|n50.81|epididymitis|n45.1|orchitis|scrotal swelling", ["N44.00", "N50.811", "N45.1"],
 `MDM: ***-year-old with {right/left} scrotal pain, onset ***.
@@ -79,6 +79,6 @@ OB (Dr. ***) consulted at ***. Disposition: ***.`],
 `MDM: ***-year-old at *** weeks with nausea and vomiting of pregnancy. {Intrauterine pregnancy confirmed on ***.}
 Considered molar pregnancy, UTI/pyelonephritis, appendicitis, biliary disease, pancreatitis, hyperthyroidism and DKA.
 Labs: ***; urine ketones ***.
-Treatment: IV fluids with dextrose and thiamine as indicated, {ondansetron/metoclopramide/promethazine ***}. Tolerated PO.
+Treatment: IV fluids; {thiamine *** before any dextrose-containing fluid}; {ondansetron/metoclopramide/promethazine ***}. Tolerated PO.
 Discharge with {doxylamine-pyridoxine and ***}, small frequent meals, OB follow-up.`],
 ]);

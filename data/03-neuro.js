@@ -6,14 +6,14 @@ add("Neuro", [
 NIHSS ***. Point-of-care glucose ***.
 Considered hypoglycemia, seizure/Todd's paralysis, ICH, complex migraine, conversion, mass lesion and infection.
 CT head: ***. CTA head/neck: {LVO at *** / no LVO}. {CT perfusion ***}.
-Thrombolysis: {tenecteplase *** mg given at *** (door-to-needle *** min) after reviewing contraindications and discussing risks/benefits / not given because ***}.
+Thrombolysis: {tenecteplase 0.25 mg/kg (*** mg, max 25 mg) single IV bolus at *** (door-to-needle *** min) after reviewing contraindications and discussing risks/benefits; BP kept <185/110 before and <180/105 for 24 h after / not given because ***}.
 Neurology (Dr. ***) and {neurointerventional team ***} consulted. BP goal ***.
-Disposition: ***. Critical care time *** minutes.`],
+Disposition: ***. {Critical care: see critical care statement.}`],
   ["tiamdm", "MDM", "TIA", "tia|transient ischemic attack|g45.9|resolved stroke symptoms|transient weakness|transient numbness", ["G45.9"],
 `MDM: ***-year-old with transient *** lasting ***, now resolved. NIHSS 0.
 Considered stroke, hypoglycemia, seizure, migraine aura, syncope and peripheral nerve lesion.
 ABCD² ***. CT head ***; CTA head/neck ***; ECG ***; glucose ***.
-Plan: {admit/observation for expedited workup / ED-based TIA pathway with MRI, echo and monitoring}. Antiplatelet: ***.`],
+ABCD² is not used alone to decide disposition. Plan: {admit/observation for expedited workup / ED-based TIA pathway with MRI, vessel imaging, echo and monitoring}. Antiplatelet: {aspirin + clopidogrel load, then dual therapy for 21 days (high-risk TIA/minor stroke, POINT/CHANCE) / aspirin *** / ***}.`],
   ["*hamdm", "MDM", "Headache", "headache|ha|r51.9|migraine|g43.909|tension headache|cephalgia|head pain", ["R51.9", "G43.909"],
 `MDM: ***-year-old with headache, onset ***, similar to prior headaches: {yes/no}.
 Red flags screened: {no thunderclap onset, fever/meningismus, focal deficit, papilledema, immunocompromise, pregnancy/postpartum, anticoagulation, age >50 new onset, trauma, or exertional/positional component / ***}.
@@ -23,7 +23,7 @@ Assessment: {primary headache, likely migraine/tension type / ***}.
 Treatment: ***. Reassessment: ***. Discharge with follow-up and return precautions.`],
   ["sahmdm", "MDM", "Subarachnoid hemorrhage rule-out", "sah|subarachnoid hemorrhage|thunderclap headache|worst headache of life|i60.9|sudden headache|ottawa sah", ["I60.9", "R51.9"],
 `MDM: SAH considered given {sudden-onset / maximal at onset} headache.
-Ottawa SAH Rule: ***.
+Ottawa SAH Rule: {*** / not applicable}. (Applies only to alert patients ≥15 y with new severe atraumatic headache peaking within 1 h; excludes new neurologic deficit, prior aneurysm or SAH, brain tumor, and recurrent similar headaches.)
 Non-contrast CT head obtained {within 6 hours of onset on a modern scanner, read negative by radiology / at *** hours}.
 {CT within 6 h negative in neurologically intact patient: SAH effectively excluded / CTA ***/ LP: opening pressure ***, tube 1 RBC ***, tube 4 RBC ***, xanthochromia ***}.
 Shared decision-making documented: ***.`],
@@ -36,15 +36,15 @@ Counseled on state driving restrictions and seizure safety (no driving, swimming
   ["*vertmdm", "MDM", "Dizziness / vertigo", "dizziness|vertigo|r42|bppv|h81.10|vestibular neuritis|lightheaded|dizzy|hints exam|posterior circulation", ["R42", "H81.10"],
 `MDM: ***-year-old with {episodic triggered / continuous acute / spontaneous episodic} dizziness for ***.
 Considered posterior circulation stroke, vertebral dissection, BPPV, vestibular neuritis, Ménière's, arrhythmia, orthostasis, anemia, hypoglycemia and medication effect.
-Exam: nystagmus ***; HINTS {benign: unidirectional horizontal nystagmus, negative test of skew, abnormal head impulse / concerning: ***}; Dix-Hallpike ***; gait ***; no dysarthria, dysmetria or other focal deficit.
+Exam: nystagmus ***; HINTS {benign: unidirectional horizontal nystagmus, negative test of skew, abnormal head impulse / concerning: *** / not applicable: HINTS is validated only for acute continuous vertigo with ongoing nystagmus, by a trained examiner}; Dix-Hallpike ***; gait ***; no dysarthria, dysmetria or other focal deficit.
 {MRI/CTA ***}.
 Assessment: ***. Treatment: {Epley maneuver / meclizine / ***}. Return precautions for new neurologic symptoms.`],
   ["ichmdm", "MDM", "Intracranial hemorrhage", "ich|intracranial hemorrhage|i61.9|intraparenchymal hemorrhage|brain bleed|hemorrhagic stroke|subdural|s06.5", ["I61.9", "S06.5X0A"],
 `MDM: ***-year-old with *** and CT showing ***.
 GCS ***. Anticoagulant/antiplatelet: ***. Coags ***.
-Reversal: {*** given at *** / not indicated}. BP goal SBP {<160 / ***}; treated with ***.
-Neurosurgery (Dr. ***) consulted; recommends ***. HOB 30°, seizure prophylaxis per neurosurgery.
-Disposition: neuro ICU. Critical care time *** minutes.`],
+Reversal: {*** given at *** / not indicated}. BP goal: {SBP 140 (avoid <130) / ***}; treated with ***.
+Neurosurgery (Dr. ***) consulted; recommends ***. HOB 30°. Antiseizure medication: {not given; prophylaxis not recommended for spontaneous ICH / traumatic hemorrhage: levetiracetam *** per neurosurgery (typically 7 days) / treating clinical seizure: ***}.
+Disposition: neuro ICU. {Critical care: see critical care statement.}`],
   ["menmdm", "MDM", "Meningitis considered", "meningitis|g03.9|neck stiffness|fever headache|encephalitis|lumbar puncture|lp", ["G03.9"],
 `Meningitis/encephalitis considered given ***.
 {Low suspicion: no meningismus, altered mental status, rash or focal deficit; afebrile; well-appearing / LP performed (see procedure note): opening pressure ***, WBC ***, RBC ***, glucose ***, protein ***, Gram stain ***}.

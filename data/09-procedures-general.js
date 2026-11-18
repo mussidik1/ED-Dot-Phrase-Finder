@@ -6,9 +6,9 @@ add("Procedures", [
 Consent: {verbal/written} after discussing risks (infection, scarring, dehiscence, retained foreign body) and benefits.
 Location: ***. Length: *** cm. Complexity: {simple / intermediate (layered) / complex}.
 Anesthesia: *** mL of {1% lidocaine with epinephrine / 1% lidocaine without epinephrine / ***} by {local infiltration / digital block}.
-Prep: irrigated with *** mL normal saline; explored in bloodless field; no foreign body or deep structure involvement.
+Prep: irrigated with *** mL normal saline; explored in bloodless field: {no foreign body or deep structure involvement / ***}.
 Closure: {*** × ***-0 *** (nylon, Prolene or Vicryl Rapide) simple interrupted / deep layer *** × ***-0 Vicryl / staples ×*** / tissue adhesive}.
-Estimated blood loss minimal. Patient tolerated well; no complications. Distal neurovascular status intact after repair.`],
+Estimated blood loss ***. Complications: {none / ***}. Distal neurovascular status after repair: {intact / ***}.`],
   ["*indprocedure", "Procedure", "Incision and drainage", "incision and drainage|i&d|i and d|abscess drainage|abscess|boil drainage", [],
 `Procedure: incision and drainage of abscess
 Consent: {verbal/written}. Time-out performed.
@@ -21,7 +21,7 @@ Tolerated well; no complications.`],
 `Procedure: splint application
 Indication: ***. Splint: {volar / sugar-tong / ulnar gutter / thumb spica / posterior long-arm / posterior short-leg with stirrup / ***}, applied by {me / *** under my supervision}, checked by me.
 Materials: {fiberglass/plaster} with adequate padding.
-Neurovascular status before and after: capillary refill <2 s, sensation and motor function intact distally.
+Neurovascular status before: ***; after: {capillary refill <2 s, sensation and motor function intact distally / ***}. Complications: {none / ***}.
 Splint care, elevation and compartment syndrome precautions reviewed.`],
   ["reduction", "Procedure", "Closed reduction (fracture / dislocation)", "reduction|closed reduction|shoulder dislocation|s43.006a|dislocation|reduce|fracture reduction|patella dislocation|finger dislocation", ["S43.006A"],
 `Procedure: closed reduction of ***
@@ -51,9 +51,9 @@ Lowest SpO₂ ***. Post-intubation sedation ***. Complications: {none / ***}.`],
 `Procedure: central venous catheter placement
 Indication: ***. Consent: {written / emergent}. Time-out performed.
 Site: {right/left} {internal jugular / subclavian / femoral}. Full sterile barrier precautions: cap, mask, sterile gown and gloves, chlorhexidine prep, full-body drape. Hand hygiene performed.
-Ultrasound guidance used with real-time visualization of needle entry; vessel patent and compressible; image saved.
-Anesthesia *** mL 1% lidocaine. Seldinger technique; *** Fr *** -lumen catheter secured at *** cm. All ports aspirated and flushed. Guidewire removed and confirmed intact.
-{CXR: tip at cavoatrial junction, no pneumothorax.} EBL minimal. No complications.`],
+Ultrasound guidance used with real-time visualization of needle entry; vessel patent and compressible; {image saved / ***}.
+Anesthesia *** mL 1% lidocaine. Seldinger technique; *** Fr *** -lumen catheter secured at *** cm. All ports aspirated and flushed: {yes / ***}. Guidewire removed {and confirmed intact / ***}.
+{CXR: tip at cavoatrial junction, no pneumothorax / CXR: *** / femoral line, CXR not needed}. EBL ***. Complications: {none / ***}.`],
   ["lpproc", "Procedure", "Lumbar puncture", "lumbar puncture|lp|spinal tap|csf", [],
 `Procedure: lumbar puncture
 Indication: ***. Consent: {written/verbal}. Time-out performed. {CT before LP: *** / not indicated.}
@@ -63,7 +63,7 @@ Tolerated well; no complications.`],
   ["usivproc", "Procedure", "Ultrasound-guided peripheral IV", "ultrasound iv|us iv|usgiv|ultrasound guided iv|difficult iv access|peripheral iv", [],
 `Procedure: ultrasound-guided peripheral IV
 Indication: difficult access after *** failed attempts. Site: {right/left} ***. Real-time ultrasound guidance with dynamic needle visualization; vessel patent and compressible.
-*** g, *** -inch catheter placed on attempt ***; good blood return, flushed easily without infiltration. Secured. No complications.`],
+*** g, *** -inch catheter placed on attempt ***; {good blood return, flushed easily without infiltration / ***}. Secured. Complications: {none / ***}.`],
   ["pocus", "Exam", "Point-of-care ultrasound (FAST / cardiac)", "pocus|bedside ultrasound|fast|efast|fast exam|cardiac ultrasound|echo|bedside echo|rush exam", [],
 `Point-of-care ultrasound performed and interpreted by me for ***.
 {FAST/eFAST: no free fluid in RUQ, LUQ, pelvis or pericardium; lung sliding present bilaterally / ***.}
@@ -81,33 +81,43 @@ Critical care time *** minutes, excluding separately billable procedures.`],
 add("General", [
   ["*critcare", "Note", "Critical care time", "critical care|critical care time|cc time|critical care attestation|99291|critically ill", [],
 `Critical care: This patient was critically ill with a high probability of imminent or life-threatening deterioration due to ***.
-I personally spent *** minutes of critical care time, excluding separately billable procedures and teaching time, in direct care including: evaluation and management, interpretation of labs/imaging/ECG, ***, review of records, discussion with consultants (***) and family, and frequent reassessment.`],
-  ["*ama", "Note", "Leaving against medical advice", "ama|against medical advice|z53.21|left ama|refusal of care|z53.29|refused treatment|eloped", ["Z53.21", "Z53.29"],
+I personally spent *** minutes of critical care time, excluding separately billable procedures and teaching time, and not overlapping time billed by other providers. This included: evaluation and management, interpretation of labs/imaging/ECG, ***, review of records, discussion with consultants (***), frequent reassessment{, and discussion with family/surrogate because the patient was unable to participate and the discussion was necessary for treatment decisions}.`],
+  ["*ama", "Note", "Leaving against medical advice", "ama|against medical advice|left ama|refusal of care|z53.29|refused treatment|leaving ama", ["Z53.29"],
 `Against medical advice: The patient wishes to leave before completion of evaluation/treatment. I recommended ***.
-Decision-making capacity: the patient is alert, not clinically intoxicated, and able to understand the information, appreciate how it applies to them, reason about options and communicate a consistent choice.
+Not under an emergency petition or hold: {confirmed / ***}.
+Decision-making capacity: the patient is alert, {not clinically intoxicated / ***}, and able to understand the information, appreciate how it applies to them, reason about options and communicate a consistent choice.
 Risks discussed in plain language, including ***, up to and including permanent disability and death. Alternatives discussed: ***.
-The patient verbalized understanding and still declines. {AMA form signed / declined to sign.} Treatments and prescriptions offered: ***. Encouraged to return at any time; return precautions and follow-up given. {Family/***: present.}`],
-  ["attest", "Note", "Attending attestation (resident / APP)", "attestation|attending attestation|resident attestation|teaching physician|app attestation|cosign|shared visit|split shared", [],
-`Attending attestation: I saw and evaluated the patient, discussed the case with {resident Dr. *** / APP ***}, and agree with the findings and plan as documented in their note, with the following additions/exceptions: ***.
-I personally performed {the history/exam/MDM / ***}. I was present for the key portions of ***.`],
+The patient verbalized understanding and still declines. {AMA form signed / declined to sign.} Present for discussion: ***. {Interpreter ID ***.} Treatments and prescriptions offered: ***. Encouraged to return at any time; return precautions and follow-up given. {Family/***: present.}`],
+  ["attest", "Note", "Teaching physician attestation (resident)", "attestation|attending attestation|resident attestation|teaching physician|cosign|resident note", [],
+`Teaching physician attestation: I saw and evaluated the patient, discussed the case with resident Dr. ***, and agree with the resident's findings and plan as documented, with these additions/exceptions: ***.
+{I was present for the key or critical portions of ***.}`],
+  ["attestapp", "Note", "Split/shared visit attestation (APP)", "split shared|shared visit|app attestation|pa attestation|np attestation|split/shared|fs modifier|cosign app", [],
+`Split/shared visit with *** (APP). I performed the substantive portion of this visit: {more than half of the total time (*** of *** minutes) / the substantive part of the medical decision making: ***}.
+{I personally evaluated the patient and ***.} (Bill under the practitioner who performed the substantive portion, with modifier FS.)`],
   ["mdmdata", "Note", "Data reviewed and risk (2023 E/M MDM)", "mdm|data reviewed|medical decision making|e/m level|99285|99284|level 5|independent interpretation|external records|risk of management|social determinants", [],
 `Data reviewed:
 - Labs ordered/reviewed: ***.
 - Imaging: ***; {independently interpreted by me: *** / reviewed radiology report}.
-- ECG independently interpreted by me: ***.
+- {ECG independently interpreted by me (not separately billed): *** / ECG: see ECG interpretation}.
 - External records reviewed: ***.
 - History from independent historian (***): ***.
 - Discussed management with {consultant/PCP/***}: ***.
-Risk: {prescription drug management / decision regarding hospitalization / parenteral controlled substances / decision not to resuscitate or de-escalate care / social determinants of health affecting diagnosis or treatment: ***}.`],
+Problems addressed: ***.
+Risk: {prescription drug management / decision regarding hospitalization / parenteral controlled substances / drug therapy requiring intensive monitoring for toxicity / decision regarding emergency major surgery / decision not to resuscitate or to de-escalate care / social determinants of health significantly limiting diagnosis or treatment: ***}.`],
   ["dispo", "Note", "Discharge disposition and return precautions", "discharge|dispo|disposition|return precautions|discharged home|follow up|shared decision making|sdm", [],
-`Disposition: The patient is well-appearing, hemodynamically stable and appropriate for outpatient management. Results and diagnosis discussed; questions answered.
+`Disposition: The patient is {well-appearing and hemodynamically stable / ***} and appropriate for outpatient management. Results and diagnosis discussed; questions answered.
 Follow-up: *** within *** days.
-Strict return precautions given, including ***. The patient {and ***} verbalized understanding and agree with the plan. Discharge instructions provided {in ***; interpreter ID ***}.`],
+Strict return precautions given, including ***. {The patient / The caregiver (***)} {and ***} verbalized understanding and {agrees / agree} with the plan. Discharge instructions provided {in ***; interpreter ID ***}.`],
+  ["pedsdispo", "Note", "Pediatric discharge disposition", "pediatric discharge|peds dispo|child discharge|caregiver return precautions|peds disposition", [],
+`Disposition: The child is {well-appearing, interactive and tolerating fluids / ***} and appropriate for discharge with {parent / caregiver (***)}. Results and diagnosis discussed with caregiver; questions answered.
+Weight *** kg; medication doses given in mg and mL with concentration: ***.
+Follow-up: {pediatrician / ***} within *** days.
+Return precautions reviewed with caregiver, including ***. Caregiver verbalized understanding and agrees with the plan. {Discharge instructions provided in ***; interpreter ID ***.}`],
   ["admit", "Note", "Admission / handoff", "admission|admit|admitted|hospitalist|handoff|sign out|observation|obs", [],
 `Disposition: admit to {*** service / observation} under Dr. *** for ***. Discussed with admitting provider at ***; accepted.
 Pending at time of admission: ***. Code status: ***. Condition: ***.`],
   ["interpreter", "Note", "Interpreter use", "interpreter|language line|limited english proficiency|lep|spanish|translator|interpreter used", [],
-`A certified medical interpreter was used for this encounter: {in person / video / phone}, language ***, interpreter ID ***. The patient declined to use a family member as interpreter, or a family member was not used.`],
+`A certified medical interpreter was used for this encounter: {in person / video / phone}, language ***, interpreter ID ***. {Family members were not used as interpreters / Patient declined a certified interpreter and chose ***, after being told one is available at no cost}.`],
   ["goc", "Note", "Goals of care conversation", "goals of care|goc|code status|dnr|dni|polst|molst|palliative|hospice|comfort care|z66", ["Z66"],
 `Goals of care: Discussed with {patient / surrogate *** (relationship ***)} for *** minutes. Discussed diagnosis, prognosis and treatment options, including ***.
 Patient values and goals: ***.

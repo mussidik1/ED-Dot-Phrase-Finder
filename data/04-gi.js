@@ -47,16 +47,16 @@ Glasgow-Blatchford score ***.
 Treatment: 2 large-bore IVs, {PRBC *** units for Hgb <7 (<8 if cardiac disease)}, {pantoprazole ***}, {octreotide and ceftriaxone for suspected variceal bleed}, {reversal ***}.
 GI (Dr. ***) consulted. Disposition: ***.`],
   ["*gastromdm", "MDM", "Gastroenteritis / vomiting and diarrhea", "gastroenteritis|age|a09|nausea vomiting|n/v|vomiting|r11.2|diarrhea|r19.7|stomach bug|n v d|food poisoning|k52.9", ["A09", "R11.2", "R19.7"],
-`MDM: ***-year-old with *** days of {nausea/vomiting/diarrhea}. No blood in stool, high fever or severe localized pain reported. ***
+`MDM: ***-year-old with *** days of {nausea/vomiting/diarrhea}. Blood in stool, high fever or severe localized pain: {none reported / ***}.
 Considered appendicitis, obstruction, pancreatitis, biliary disease, DKA, pregnancy, inferior MI, C. difficile (antibiotics: ***), toxic ingestion and increased ICP.
 Exam: abdomen soft, ***; mucous membranes ***.
 {Labs: ***.}
-Treatment: {ondansetron ***, IV fluids ***}. Tolerated PO challenge.
+Treatment: {ondansetron ***, IV fluids ***}. PO challenge: {tolerated / ***}.
 Assessment: likely viral gastroenteritis. Discharged with antiemetic, hydration guidance and return precautions.`],
   ["gastrodc", "Discharge", "Vomiting and diarrhea, discharge", "gastroenteritis discharge|vomiting discharge|diarrhea discharge|nausea|gastroenteritis|stomach bug", ["A09"],
 `You likely have a stomach virus. It usually gets better in 2–3 days.
 
-- Drink small sips often: water, oral rehydration solution or sports drinks. Start with 1–2 ounces every 10–15 minutes.
+- Drink small sips often: oral rehydration solution (such as Pedialyte), water, or for adults, sports drinks. Start with 1–2 ounces every 10–15 minutes.
 - Use *** for nausea as prescribed.
 - Eat simple foods when you feel ready.
 - Wash hands well; the virus spreads easily.

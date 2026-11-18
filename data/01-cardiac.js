@@ -13,9 +13,9 @@ Differential includes ACS, PE, aortic dissection, pneumothorax, pericarditis/tam
 - HEART score: *** ({low/moderate/high} risk).
 - PE: {PERC negative / Wells low and D-dimer negative / CTA negative / clinically not suspected because ***}.
 - Dissection: {low suspicion: no tearing/radiating pain, pulse or BP differential, or new focal deficit / CTA negative}.
-- CXR: *** (no pneumothorax, widened mediastinum or infiltrate).
+- CXR: *** ({no pneumothorax, widened mediastinum or infiltrate / ***}).
 
-Assessment: {low-risk chest pain, ACS ruled out by serial troponin / NSTEMI / unstable angina / ***}.
+Assessment: {low-risk chest pain; acute MI excluded by serial hs-troponin; unstable angina not fully excluded, outpatient follow-up arranged / NSTEMI / unstable angina / ***}.
 Plan: ***. Discussed results, risk and follow-up with patient, who agrees with plan.`],
   ["heart", "Score", "HEART score", "heart score|chest pain risk|chest pain|acs risk stratification|mace", [],
 `HEART score:
@@ -28,7 +28,7 @@ Total: *** — {0–3 low (about 2% 6-week MACE) / 4–6 moderate / 7–10 high}
   ["cpdc", "Discharge", "Chest pain, discharge", "chest pain discharge|chest pain|low risk chest pain|noncardiac chest pain", ["R07.9"],
 `Your heart tests today (ECG and blood tests) did not show a heart attack. That is reassuring, but chest pain can have many causes and some cannot be ruled out in one ED visit.
 
-- Follow up with *** within {2–3 days / 1 week}. Ask about a stress test or other heart testing if recommended.
+- Follow up with *** within {2–3 days / 1 week}. Your doctor will decide whether you need any more heart testing.
 - Take your usual medicines. ***
 
 Call 911 (do not drive yourself) for chest pain that is worse or lasts more than a few minutes, pain spreading to your arm, jaw or back, shortness of breath, sweating, fainting, or a racing or irregular heartbeat.`],
@@ -36,11 +36,10 @@ Call 911 (do not drive yourself) for chest pain that is worse or lasts more than
 `MDM: ***-year-old with *** and ECG showing ***-mm ST elevation in *** consistent with {anterior/inferior/lateral/posterior} STEMI (independently interpreted). Compared with prior ECG: ***.
 
 Cath lab activated at ***. Interventional cardiology (Dr. ***) contacted at ***.
-Given: aspirin *** mg chewed, heparin *** units IV, ***.
+Given: aspirin *** mg chewed, heparin *** units IV (weight-based per protocol), {P2Y12 inhibitor *** per interventionalist / deferred to cath lab}, ***. {Posterior (V7–V9) / right-sided leads: ***.}
 Considered and assessed for aortic dissection before anticoagulation: {no tearing pain, pulse deficit, mediastinal widening / ***}.
 Door-to-ECG *** min. Patient to cath lab at ***.
-
-Critical care time: *** minutes, excluding separately billable procedures.`],
+{Critical care: see critical care statement.}`],
   ["nstemimdm", "MDM", "NSTEMI / unstable angina", "nstemi|non st elevation mi|i21.4|unstable angina|i20.0|acs|acute coronary syndrome|elevated troponin|troponin leak", ["I21.4", "I20.0"],
 `MDM: ***-year-old with *** and troponin *** → *** (rising). ECG: *** without STEMI criteria (independently interpreted).
 
@@ -52,7 +51,8 @@ Disposition: admit to *** for ACS management and possible catheterization. High 
 `MDM: ***-year-old with {new/known} atrial {fibrillation/flutter} with rapid ventricular response, rate ***. Hemodynamically {stable/unstable}.
 
 Considered precipitants: infection/sepsis, hypovolemia, thyrotoxicosis, PE, ACS, alcohol, electrolyte derangement, medication nonadherence. Workup: ***.
-Onset: {<48 h / >48 h / unknown}.
+Onset: {<48 h / >48 h / unknown}; CHA₂DS₂-VASc weighed for anticoagulation before cardioversion (2023 ACC/AHA/ACCP/HRS).
+Pre-excitation (WPW) on ECG: {none / present: AV nodal blockers avoided}. Decompensated HFrEF: {no / yes: diltiazem avoided}.
 - Rate control: *** (diltiazem *** mg IV / metoprolol *** mg IV), rate now ***.
 - {Cardioversion: *** J synchronized, converted to sinus / Not cardioverted because ***}.
 - CHA₂DS₂-VASc ***; HAS-BLED ***. Anticoagulation: {continued / started *** / not indicated / discussed, declined}.
@@ -72,10 +72,10 @@ Considered precipitants: ACS, arrhythmia, hypertension, dietary/medication nonad
 Treatment: furosemide *** mg IV, {nitroglycerin *** / BiPAP ***}. Response: ***.
 Disposition: {admit for IV diuresis and monitoring / discharge after diuresis with increased home dose and follow-up in 48–72 h}.`],
   ["*syncmdm", "MDM", "Syncope", "syncope|passed out|fainting|loc|r55|near syncope|presyncope|vasovagal|collapse", ["R55"],
-`MDM: ***-year-old with {syncope/near-syncope} while ***. Prodrome: ***. No seizure-like activity, incontinence or prolonged postictal state reported.
+`MDM: ***-year-old with {syncope/near-syncope} while ***. Prodrome: ***. Seizure-like activity, incontinence or prolonged postictal state: {none reported / ***}.
 
 Considered arrhythmia, structural heart disease (AS, HOCM), PE, dissection, SAH, GI bleed, ectopic pregnancy, orthostasis, vasovagal and situational syncope.
-- ECG: *** (no Brugada, WPW, long QT, high-grade block or HOCM pattern).
+- ECG: *** ({no Brugada, WPW, long QT, high-grade block or HOCM pattern / ***}).
 - Labs: ***. Orthostatics: ***.
 - {Canadian Syncope Risk Score *** / San Francisco Syncope Rule: ***}.
 Assessment: {likely vasovagal/situational syncope, low risk / ***}.
@@ -90,7 +90,7 @@ Follow-up with PCP within 1 week for recheck.`],
 Considered dissection, ACS, pulmonary edema, stroke/ICH, PRES, preeclampsia (if applicable) and sympathomimetic toxicity.
 Workup: ***.
 Treatment: {nicardipine/clevidipine/labetalol} *** with target {≤25% reduction in the first hour / *** for dissection or stroke}.
-Disposition: ICU. Critical care time *** minutes.`],
+Disposition: ICU. {Critical care: see critical care statement.}`],
   ["*dvtmdm", "MDM", "DVT", "dvt|deep vein thrombosis|leg swelling|i82.40|calf pain|unilateral leg swelling|blood clot leg", ["I82.409", "M79.89"],
 `MDM: ***-year-old with {right/left} leg swelling and pain for ***.
 Considered DVT, cellulitis, Baker's cyst, muscle strain/hematoma, superficial thrombophlebitis, lymphedema and compartment syndrome.
