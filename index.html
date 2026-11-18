@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en" data-build="7faa57c3">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>ED Dot Phrase Finder</title>
+  <meta name="description" content="Type a clinical impression and get emergency medicine dot phrase templates. Works offline.">
+  <meta name="theme-color" content="#07111F">
+  <meta name="color-scheme" content="dark">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Dot Phrases">
+  <meta name="format-detection" content="telephone=no">
+  <script>
+    // Before anything paints: installed app or web page, and the saved color and text-size settings.
+    (function () {
+      var d = document.documentElement;
+      var mq = function (q) { return !!(window.matchMedia && window.matchMedia(q).matches); };
+      var get = function (k) { try { return JSON.parse(localStorage.getItem('eddot.' + k)); } catch (e) { return null; } };
+      var app = mq('(display-mode: standalone)') || mq('(display-mode: fullscreen)') ||
+        mq('(display-mode: window-controls-overlay)') || window.navigator.standalone === true;
+      var theme = get('theme');
+      var light = theme === 'light' || (theme === 'auto' && mq('(prefers-color-scheme: light)'));
+      var size = get('textSize');
+      d.className += (app ? ' is-app' : ' is-web') + (light ? ' theme-light' : '') + (size === 2 || size === 3 ? ' text-' + size : '');
+      if (light) document.querySelector('meta[name="color-scheme"]').setAttribute('content', 'light');
+    })();
+  </script>
+  <link rel="preload" href="fonts/cardo-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/cardo-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="app.ab789bae.css">
+  <script type="module" src="app.d7dbc247.js"></script>
+</head>
+<body>
+  <div class="statusbar" aria-hidden="true"></div>
+  <a class="hivis" data-report href="mailto:?subject=Dot%20Phrase%20Finder%20problem%20report">
+    <span>Problems or suggestions?</span> <span class="hivis-mail"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="13" rx="2.2" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="m4.5 7.5 7.5 5.6 7.5-5.6" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/></svg>Email <span class="hivis-addr"></span></span>
+  </a>
+  <header class="top">
+    <div class="band">
+      <div class="band-row">
+        <h1 class="title">ED Dot Phrase Finder</h1>
+        <button class="install web-only" id="install" type="button" hidden>Install app</button>
+        <button class="icon-btn" id="about-open" type="button" aria-label="Settings and info" aria-haspopup="dialog">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M4 7.5h8.6M17.4 7.5H20M4 16.5h2.6M11.4 16.5H20" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="15" cy="7.5" r="2.4" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="9" cy="16.5" r="2.4" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+        </button>
+      </div>
+      <form class="search" role="search" id="search-form">
+        <label class="vh" for="q">Search by clinical impression</label>
+        <svg class="search-glass" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.25" fill="none" stroke="currentColor" stroke-width="2"/><path d="m15.2 15.2 4.8 4.8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+        <input id="q" type="search" placeholder="Clinical impression, e.g. chest pain" autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false" enterkeyhint="search">
+        <button class="clear" id="clear" type="button" aria-label="Clear search" hidden>
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M7 7l10 10M17 7 7 17" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+        </button>
+      </form>
+    </div>
+    <nav class="tabs" id="tabs" aria-label="Filter by section"></nav>
+  </header>
+
+  <main id="main">
+    <p class="status" id="status" aria-live="polite"></p>
+    <div id="results"></div>
+  </main>
+
+  <footer class="foot">
+    <div class="foot-inner">
+      <p id="foot-count">Emergency medicine templates.</p>
+      <p>Templates are starting points. Edit every one to match the patient you saw.</p>
+      <p class="foot-links">
+        <button class="linkish web-only" type="button" data-open-install>Add to Home Screen</button>
+        <button class="linkish" type="button" id="about-open-2">Settings and info</button>
+      </p>
+    </div>
+    <div class="colophon">
+      <div class="colophon-inner">
+        <p>Made by Mustafa M. Sidik, MS, NRP, with Claude Opus 5.5. Not for commercial use.</p>
+        <p>Problems or suggestions? <a class="report" id="report" data-report href="mailto:?subject=Dot%20Phrase%20Finder%20problem%20report">Email </a></p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- Add to Home Screen page: shown in the browser only, never inside the installed app -->
+  <div class="page web-only" id="install-page" role="dialog" aria-modal="true" aria-labelledby="install-title" hidden>
+    <div class="page-band">
+      <div class="page-band-row">
+        <button class="back" type="button" id="install-back">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Back to search</span>
+        </button>
+      </div>
+    </div>
+    <div class="page-body">
+      <h2 class="page-title" id="install-title" tabindex="-1">Add it to your Home Screen</h2>
+      <p class="page-lede">You get a Dot Phrases icon that opens full screen like an app and keeps working without a signal.</p>
+
+      <div class="device-pick" role="group" aria-label="Choose your device">
+        <button type="button" class="device" data-device="ios" aria-pressed="false">iPhone/iPad</button>
+        <button type="button" class="device" data-device="android" aria-pressed="false">Android</button>
+        <button type="button" class="device" data-device="desktop" aria-pressed="false">Computer</button>
+      </div>
+      <p class="detected" id="detected"></p>
+
+      <section class="howto" data-panel="ios" aria-label="iPhone or iPad steps">
+        <ol class="steps">
+          <li><p><strong>Open this page in Safari.</strong> If it opened inside another app, such as Gmail or Outlook, use that app’s “Open in Safari” option first.</p></li>
+          <li><p><strong>Tap Share</strong> <svg class="glyph" viewBox="0 0 24 24" aria-label="Share icon" role="img"><path d="M12 3.5v11M8 7.5l4-4 4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M6.5 10.5H5.5v10h13v-10h-1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>. On iOS 26 and later, tap <span class="key">•••</span> next to the address bar first, then Share.</p></li>
+          <li><p><strong>Scroll down and tap Add to Home Screen</strong> <svg class="glyph" viewBox="0 0 24 24" aria-label="Add to Home Screen icon" role="img"><rect x="4" y="4" width="16" height="16" rx="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 8.5v7M8.5 12h7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>.</p></li>
+          <li><p><strong>Leave “Open as Web App” on, then tap Add.</strong> Older iPhones skip the switch; just tap Add.</p></li>
+        </ol>
+        <p class="aside">Using Chrome on an iPhone? Tap Share in the address bar, then Add to Home Screen. If it isn’t listed, open the page in Safari.</p>
+      </section>
+
+      <section class="howto" data-panel="android" aria-label="Android steps" hidden>
+        <button class="btn primary install-now" type="button" id="install-now" hidden>Install now</button>
+        <ol class="steps">
+          <li><p><strong>Open this page in Chrome.</strong></p></li>
+          <li><p><strong>Tap the menu</strong> <span class="key">⋮</span> in the top right corner.</p></li>
+          <li><p><strong>Tap Add to Home screen, then Install.</strong> Some phones show Install app in the menu instead; tap that.</p></li>
+        </ol>
+        <p class="aside">Samsung Internet: tap the menu <span class="key">≡</span>, then Add page to, then Home screen.</p>
+      </section>
+
+      <section class="howto" data-panel="desktop" aria-label="Computer steps" hidden>
+        <button class="btn primary install-now" type="button" id="install-now-desktop" hidden>Install now</button>
+        <ul class="browsers">
+          <li><p><strong>Chrome or Edge:</strong> click the install icon at the right end of the address bar, then Install. You can also find it in the browser menu.</p></li>
+          <li><p><strong>Safari on a Mac:</strong> choose File, then Add to Dock.</p></li>
+        </ul>
+      </section>
+
+      <div class="after">
+        <img src="icons/icon-192.png" width="64" height="64" alt="" class="after-icon" loading="lazy">
+        <p>Look for <strong>Dot Phrases</strong> on your Home Screen and open it from there. It opens straight to search, full screen, and works offline.</p>
+      </div>
+
+      <div class="share-link">
+        <p>Sending this to a colleague? Share the link to this page.</p>
+        <button class="btn quiet" type="button" id="copy-install-link">Copy link to these steps</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="sheet-backdrop" id="about" hidden>
+    <section class="sheet" role="dialog" aria-modal="true" aria-labelledby="about-title" tabindex="-1">
+      <div class="sheet-head">
+        <h2 id="about-title">Settings and info</h2>
+        <button class="icon-btn" type="button" id="about-close" aria-label="Close">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M7 7l10 10M17 7 7 17" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="sheet-body">
+        <fieldset class="setting">
+          <legend>Colors</legend>
+          <div class="seg">
+            <label><input type="radio" name="theme" value="dark"><span>Navy</span></label>
+            <label><input type="radio" name="theme" value="light"><span>Light</span></label>
+            <label><input type="radio" name="theme" value="auto"><span>Match device</span></label>
+          </div>
+        </fieldset>
+        <fieldset class="setting">
+          <legend>Text size</legend>
+          <div class="seg">
+            <label><input type="radio" name="textSize" value="1"><span>Standard</span></label>
+            <label><input type="radio" name="textSize" value="2"><span class="size-2">Large</span></label>
+            <label><input type="radio" name="textSize" value="3"><span class="size-3">Larger</span></label>
+          </div>
+        </fieldset>
+        <h3>How it works</h3>
+        <p>Type the clinical impression the way you would say it: “chest pain”, “AFib RVR”, “kidney stone”, “peds fever”, an abbreviation (SOB, AMS, GIB) or an ICD-10 code. You get every matching template: MDMs, discharge instructions, decision rules and procedure notes.</p>
+        <p>Tap a card to copy its blank template. Or open <b>Fill in and copy</b>: tap the options you want, type into the blanks, then copy the finished text. “Full note” cards build the whole note for one impression; scores have a <b>Calculate</b> panel.</p>
+        <p><b>***</b> marks a blank (in Epic, F2 jumps to the next one). <b>{this / that}</b> marks a choice. Anything you leave unfilled copies that way, so you can finish it in the chart.</p>
+        <p>The dot names (.cpmdm, .afibmdm) are this app’s own. If your group already has a phrase for the same thing, use theirs.</p>
+        <p id="about-count"></p>
+
+        <h3>My phrases</h3>
+        <p>Open any card and tap <b>Make my version</b> to edit it, or write a new one. Your phrases are saved on this device only and show up in search with everything else.</p>
+        <p id="mine-count"></p>
+        <p class="btn-row">
+          <button class="btn quiet" type="button" id="new-phrase">New phrase</button>
+          <button class="btn quiet" type="button" id="export-mine">Export to a file</button>
+          <label class="btn quiet file-btn">Import a file or group pack<input type="file" id="import-mine" accept="application/json,.json" hidden></label>
+        </p>
+        <p class="small">A group pack is a phrase file shared by your group, such as your department’s SmartPhrases. Imported phrases keep the group’s name as a tag. Export first if you’re moving to a new phone.</p>
+        <p><button class="linkish danger" type="button" id="delete-mine">Delete all my phrases</button></p>
+
+        <h3>Shared library</h3>
+        <p>When you save a phrase you can also send it to the shared library. Each one is reviewed before anyone else sees it. Approved phrases appear under “Community”.</p>
+        <p id="community-count"></p>
+        <p>When a search finds nothing, you can tap to tell the app owner. You see the exact words before anything is sent.</p>
+
+        <h3>Before you sign</h3>
+        <p>These are original templates written for this app. They are not the official SmartPhrases of any hospital, health system or physician group. They are documentation aids, not clinical guidelines: confirm drug doses, decision rules and local protocols, and delete anything you didn’t do. Each card shows whether it has had a named clinical review.</p>
+        <p>Spanish discharge instructions should be checked by a certified medical interpreter before routine use.</p>
+        <p>Diagnosis codes are typical ICD-10-CM examples from the CDC code files, not a complete list. The right code comes from the documentation.</p>
+        <p>What you type into blanks is never saved, never leaves this device, and is cleared when you switch away from the app. Copied text stays on your phone’s clipboard (and may sync to your other devices), so paste it promptly. Stars, recent phrases and your own phrases stay on this device. The only things ever sent are phrases you choose to share and empty-search words you choose to report. Don’t enter patient identifiers anywhere.</p>
+        <div class="web-only">
+          <h3>Use it like an app</h3>
+          <p>Add it to your Home Screen for one-tap access and offline use.</p>
+          <p><button class="linkish" type="button" data-open-install>Show me how</button></p>
+        </div>
+        <div class="app-only">
+          <h3>Offline</h3>
+          <p>You’re using the installed app. It works without a connection and updates itself when you’re back online.</p>
+        </div>
+        <h3>Fine print</h3>
+        <p>Epic and SmartPhrase are trademarks of Epic Systems Corporation. This tool is not affiliated with Epic or any health system.</p>
+        <p class="ver">Build 7faa57c3</p>
+      </div>
+    </section>
+  </div>
+  <div class="sheet-backdrop" id="editor" hidden>
+    <section class="sheet" role="dialog" aria-modal="true" aria-labelledby="editor-title" tabindex="-1">
+      <div class="sheet-head">
+        <h2 id="editor-title">New phrase</h2>
+        <button class="icon-btn" type="button" id="editor-cancel" aria-label="Close">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M7 7l10 10M17 7 7 17" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <form class="sheet-body editor" novalidate>
+        <label>Dot name<input name="dot" type="text" autocapitalize="none" autocorrect="off" spellcheck="false" maxlength="26" required></label>
+        <label>Title<input name="title" type="text" maxlength="80" required></label>
+        <label>Type<select name="type">
+          <option>MDM</option><option>Discharge</option><option>Procedure</option><option>Score</option><option>Exam</option><option>Note</option>
+        </select></label>
+        <label>Impressions people will search <span class="hint">separate with | or commas</span><input name="imp" type="text" maxlength="400" autocapitalize="none" required></label>
+        <label>Template <span class="hint">*** for blanks, {this / that} for choices</span><textarea name="text" rows="12" maxlength="6000" required></textarea></label>
+        <label class="check"><input type="checkbox" name="share"> <span>Also send to the shared library for review</span></label>
+        <div class="share-fields" hidden>
+          <label>Your name and role (optional; shown publicly if approved)<input name="by" type="text" maxlength="120" placeholder="e.g. A. Smith, MD, Emergency Medicine"></label>
+          <label class="check"><input type="checkbox" name="agree"> <span>This phrase contains no patient information.</span></label>
+        </div>
+        <p class="form-error" role="alert"></p>
+        <div class="actions"><button class="act primary" type="submit">Save</button></div>
+      </form>
+    </section>
+  </div>
+  <noscript><p class="noscript">This tool needs JavaScript turned on.</p></noscript>
+</body>
+</html>
