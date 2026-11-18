@@ -1,7 +1,7 @@
 // TRAUMA AND MUSCULOSKELETAL
 
 add("Trauma & MSK", [
-  ["*headinj", "MDM", "Minor head injury", "head injury|head trauma|minor head injury|s09.90xa|concussion|s06.0x0a|fall hit head|closed head injury|chi|canadian ct head", ["S09.90XA", "S06.0X0A"],
+  ["*headinj", "MDM", "Minor head injury", "head injury|head trauma|minor head injury|s09.90xa|concussion|s06.0x0a|fall hit head|closed head injury|chi", ["S09.90XA", "S06.0X0A"],
 `MDM: ***-year-old with head injury from *** at ***. LOC ***; amnesia ***; vomiting ***; anticoagulant/antiplatelet ***.
 GCS 15, neurologically intact, ***.
 {Canadian CT Head Rule: *** / New Orleans criteria: ***}.

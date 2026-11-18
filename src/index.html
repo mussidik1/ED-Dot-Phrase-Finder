@@ -173,14 +173,32 @@
         </fieldset>
         <h3>How it works</h3>
         <p>Type the clinical impression the way you would say it: “chest pain”, “AFib RVR”, “kidney stone”, “peds fever”, an abbreviation (SOB, AMS, GIB) or an ICD-10 code. You get every matching template: MDMs, discharge instructions, decision rules and procedure notes.</p>
-        <p>Tap a card to copy its full text, then paste it into the note. Open “Show full text” to read it first. Star the ones you use often.</p>
-        <p><b>***</b> marks a blank (in Epic, F2 jumps to the next one). <b>{this / that}</b> marks a choice: keep one, delete the rest.</p>
+        <p>Tap a card to copy its blank template. Or open <b>Fill in and copy</b>: tap the options you want, type into the blanks, then copy the finished text. “Full note” cards build the whole note for one impression; scores have a <b>Calculate</b> panel.</p>
+        <p><b>***</b> marks a blank (in Epic, F2 jumps to the next one). <b>{this / that}</b> marks a choice. Anything you leave unfilled copies that way, so you can finish it in the chart.</p>
         <p>The dot names (.cpmdm, .afibmdm) are this app’s own. If your group already has a phrase for the same thing, use theirs.</p>
         <p id="about-count"></p>
+
+        <h3>My phrases</h3>
+        <p>Open any card and tap <b>Make my version</b> to edit it, or write a new one. Your phrases are saved on this device only and show up in search with everything else.</p>
+        <p id="mine-count"></p>
+        <p class="btn-row">
+          <button class="btn quiet" type="button" id="new-phrase">New phrase</button>
+          <button class="btn quiet" type="button" id="export-mine">Export to a file</button>
+          <label class="btn quiet file-btn">Import a file or group pack<input type="file" id="import-mine" accept="application/json,.json" hidden></label>
+        </p>
+        <p class="small">A group pack is a phrase file shared by your group, such as your department’s SmartPhrases. Imported phrases keep the group’s name as a tag. Export first if you’re moving to a new phone.</p>
+        <p><button class="linkish danger" type="button" id="delete-mine">Delete all my phrases</button></p>
+
+        <h3>Shared library</h3>
+        <p>When you save a phrase you can also send it to the shared library. Each one is reviewed before anyone else sees it. Approved phrases appear under “Community”.</p>
+        <p id="community-count"></p>
+        <label class="check"><input type="checkbox" id="share-gaps"> <span>Help improve the app: when a search finds nothing, send just the search words (numbers removed). Off by default; never includes anything else.</span></label>
+
         <h3>Before you sign</h3>
-        <p>These are original templates written for this app. They are not the official SmartPhrases of any hospital, health system or physician group. They are documentation aids, not clinical guidelines: confirm drug doses, decision rules and local protocols, and delete anything you didn’t do.</p>
+        <p>These are original templates written for this app. They are not the official SmartPhrases of any hospital, health system or physician group. They are documentation aids, not clinical guidelines: confirm drug doses, decision rules and local protocols, and delete anything you didn’t do. Each card shows whether it has had a named clinical review.</p>
+        <p>Spanish discharge instructions should be checked by a certified medical interpreter before routine use.</p>
         <p>Diagnosis codes are typical ICD-10-CM examples from the CDC code files, not a complete list. The right code comes from the documentation.</p>
-        <p>Nothing you type is saved or sent anywhere. Searches, stars and recent phrases stay on this device. Don’t enter patient identifiers.</p>
+        <p>What you type into blanks is never saved and never leaves this device. Stars, recent phrases and your own phrases stay on this device. The only things ever sent are phrases you choose to share, and (if you turn it on) empty search words. Don’t enter patient identifiers anywhere.</p>
         <div class="web-only">
           <h3>Use it like an app</h3>
           <p>Add it to your Home Screen for one-tap access and offline use.</p>
@@ -194,6 +212,32 @@
         <p>Epic and SmartPhrase are trademarks of Epic Systems Corporation. This tool is not affiliated with Epic or any health system.</p>
         <p class="ver">Build __VERSION__</p>
       </div>
+    </section>
+  </div>
+  <div class="sheet-backdrop" id="editor" hidden>
+    <section class="sheet" role="dialog" aria-modal="true" aria-labelledby="editor-title" tabindex="-1">
+      <div class="sheet-head">
+        <h2 id="editor-title">New phrase</h2>
+        <button class="icon-btn" type="button" id="editor-cancel" aria-label="Close">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M7 7l10 10M17 7 7 17" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <form class="sheet-body editor" novalidate>
+        <label>Dot name<input name="dot" type="text" autocapitalize="none" autocorrect="off" spellcheck="false" maxlength="26" required></label>
+        <label>Title<input name="title" type="text" maxlength="80" required></label>
+        <label>Type<select name="type">
+          <option>MDM</option><option>Discharge</option><option>Procedure</option><option>Score</option><option>Exam</option><option>Note</option>
+        </select></label>
+        <label>Impressions people will search <span class="hint">separate with | or commas</span><input name="imp" type="text" maxlength="400" autocapitalize="none" required></label>
+        <label>Template <span class="hint">*** for blanks, {this / that} for choices</span><textarea name="text" rows="12" maxlength="6000" required></textarea></label>
+        <label class="check"><input type="checkbox" name="share"> <span>Also send to the shared library for review</span></label>
+        <div class="share-fields" hidden>
+          <label>Your name and role (optional, shown if approved)<input name="by" type="text" maxlength="120" placeholder="e.g. A. Smith, MD, Emergency Medicine"></label>
+          <label class="check"><input type="checkbox" name="agree"> <span>This phrase contains no patient information.</span></label>
+        </div>
+        <p class="form-error" role="alert"></p>
+        <div class="actions"><button class="act primary" type="submit">Save</button></div>
+      </form>
     </section>
   </div>
   <noscript><p class="noscript">This tool needs JavaScript turned on.</p></noscript>

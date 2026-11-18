@@ -38,7 +38,7 @@ Surgery (Dr. ***) consulted. Disposition: ***.`],
   ["*divmdm", "MDM", "Diverticulitis", "diverticulitis|k57.32|k57.92|llq pain|diverticular disease|k57.20", ["K57.32", "K57.92"],
 `MDM: ***-year-old with LLQ pain and CT showing {uncomplicated/complicated} diverticulitis{: abscess ***, perforation ***}.
 Afebrile: ***. Tolerating PO: ***. Immunocompromised: ***.
-Plan: {uncomplicated, well-appearing, tolerating PO: outpatient management; antibiotics {not routinely required / *** given risk factors}; clear liquids advancing to regular diet; GI follow-up for colonoscopy if not recently done / admit for IV antibiotics ***, surgery consult}.`],
+Plan: {uncomplicated, well-appearing, tolerating PO: outpatient management; antibiotics *** (not routinely required for uncomplicated disease); clear liquids advancing to regular diet; GI follow-up for colonoscopy if not recently done / admit for IV antibiotics ***, surgery consult}.`],
   ["*gibmdm", "MDM", "GI bleed", "gi bleed|gib|gastrointestinal bleeding|k92.2|upper gi bleed|lower gi bleed|melena|k92.1|hematemesis|k92.0|hematochezia|k92.1|brbpr|bloody stool|coffee ground emesis", ["K92.2", "K92.1", "K92.0"],
 `MDM: ***-year-old with {melena/hematochezia/hematemesis} for ***. Anticoagulant/antiplatelet: ***. Liver disease: ***.
 Hemodynamics: HR ***, BP ***. Rectal exam: ***.

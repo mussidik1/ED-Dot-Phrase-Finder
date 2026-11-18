@@ -33,7 +33,7 @@ add("Peds", [
 `MDM: ***-{month/year}-old {fully/partially/not} immunized presenting with fever T max *** for ***.
 Appearance: {well-appearing, interactive, consolable / ***}. Hydration ***.
 Considered serious bacterial infection (UTI, pneumonia, bacteremia, meningitis), otitis media, pharyngitis, viral illness, {Kawasaki (fever ≥5 days: ***)}, and osteomyelitis/septic joint.
-{Febrile infant 8–60 days: risk-stratified per AAP 2021 guideline: UA ***, procalcitonin ***, ANC ***, CRP ***, {LP ***}.}
+{Febrile infant 8–60 days: risk-stratified per AAP 2021 guideline: UA ***, procalcitonin ***, ANC ***, CRP ***, LP ***.}
 Testing: ***. Source: ***.
 Disposition: ***. Antipyretic dosing by weight (*** kg) and return precautions reviewed with caregiver.`],
   ["pedsfeverdc", "Discharge", "Pediatric fever, discharge", "fever discharge|pediatric fever|peds fever|child fever|viral illness child", ["R50.9"],

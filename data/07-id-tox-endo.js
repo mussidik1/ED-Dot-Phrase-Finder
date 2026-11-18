@@ -5,7 +5,7 @@ add("ID & Sepsis", [
 `MDM: ***-year-old with suspected sepsis from {pulmonary/urinary/skin/intra-abdominal/unknown} source. Time zero ***.
 Vitals: T ***, HR ***, BP ***, MAP ***, RR ***, SpO₂ ***. Lactate *** (repeat ***).
 Blood cultures ×2 drawn at *** before antibiotics. Antibiotics *** started at ***.
-{30 mL/kg crystalloid (*** mL, based on {actual/ideal} weight) given for hypotension or lactate ≥4 / reduced volume because ***}.
+{30 mL/kg crystalloid (*** mL, based on *** weight) given for hypotension or lactate ≥4 / reduced volume because ***}.
 {Persistent hypotension: norepinephrine started at ***; septic shock.}
 Source control: ***. Disposition: ***. Critical care time *** minutes.`],
   ["sepsisreassess", "Exam", "Sepsis reassessment (SEP-1)", "sepsis reassessment|sep-1|sep1|perfusion exam|septic shock reassessment|fluid reassessment", [],

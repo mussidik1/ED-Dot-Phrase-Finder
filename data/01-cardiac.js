@@ -110,11 +110,11 @@ Age <50: ***; HR <100: ***; SpO₂ ≥95%: ***; no hemoptysis: ***; no estrogen 
   ["wellspe", "Score", "Wells score for PE", "wells|wells pe|pulmonary embolism|pe|d dimer", [],
 `Wells PE score:
 Clinical signs of DVT (3) ***; PE most likely diagnosis (3) ***; HR >100 (1.5) ***; immobilization ≥3 days or surgery in past 4 weeks (1.5) ***; prior DVT/PE (1.5) ***; hemoptysis (1) ***; malignancy (1) ***.
-Total ***: {≤4 PE unlikely → D-dimer {age-adjusted} *** / >4 PE likely → CTA}.`],
+Total ***: {≤4 PE unlikely → age-adjusted D-dimer *** / >4 PE likely → CTA}.`],
   ["dissmdm", "MDM", "Aortic dissection considered / ruled out", "aortic dissection|dissection|tearing chest pain|i71.00|back pain chest pain|aortic", ["I71.00"],
 `Aortic dissection considered given ***. ADD-RS ***.
 {Low risk (ADD-RS 0–1) with no tearing/ripping pain, pulse or BP differential, focal deficit, new murmur, hypotension or widened mediastinum; D-dimer *** / CTA chest: no dissection}.
-{CTA shows type {A/B} dissection: CT surgery/vascular (Dr. ***) consulted; started esmolol ***, target HR <60 and SBP <120.}`],
+{CTA shows type *** dissection: CT surgery/vascular (Dr. ***) consulted; started esmolol ***, target HR <60 and SBP <120.}`],
   ["ecgread", "Exam", "ECG interpretation", "ecg|ekg|ecg interpretation|ekg read|rhythm|electrocardiogram", [],
 `ECG independently interpreted by me at ***: {sinus rhythm / ***}, rate ***, axis {normal/***}, PR *** ms, QRS *** ms, QTc *** ms. {No acute ST elevation or depression / ***}. {No significant change from prior dated *** / ***}.`],
 ]);

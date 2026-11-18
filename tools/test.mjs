@@ -187,9 +187,24 @@ const cases = [
   ['abdominal pain discharge', ['abddc'], 1],
 ];
 
+// Full-note sets rank alongside the phrase they're built on; check them separately so phrase checks stay strict.
+const sets = new Set(rows.filter((r) => r.type === 'Set').map((r) => r.dot));
+const setCases = [
+  ['chest pain', ['cpset'], 2], ['afib rvr', ['afibset'], 2], ['sepsis', ['sepsisset'], 2], ['stroke', ['strokeset'], 2],
+  ['head injury', ['headinjset'], 3], ['kidney stone', ['stoneset'], 2], ['pneumonia', ['pnaset'], 2], ['sob', ['sobset'], 2],
+  ['chest pain note', ['cpset'], 1], ['canadian ct head', ['cchr'], 1], ['dog bite', ['bitemdm'], 1], ['gout', ['goutmdm'], 1],
+  ['septic joint', ['goutmdm'], 1], ['nursemaid elbow', ['nursemaid'], 1], ['scfe', ['scfe'], 1], ['limp', ['scfe'], 1],
+  ['foreign body nose', ['fbent'], 1], ['bead in ear', ['fbent'], 2], ['knocked out tooth', ['dentaltrauma'], 1],
+  ['med refill', ['refill'], 1], ['emergency petition', ['petition'], 1], ['5150', ['petition'], 1],
+  ['spanish chest pain', ['cpdces'], 1], ['dolor de pecho', ['cpdces'], 1], ['fiebre', ['pedsfeverdces'], 1], ['español', ['cpdces', 'abddces', 'pedsfeverdces', 'gastrodces', 'backdces', 'concussdces', 'stonedces'], 1],
+];
 let fail = 0;
-for (const [q, want, n] of cases) {
+for (const [q, want, n] of setCases) {
   const got = search(index, q).slice(0, n).map((e) => e.code);
+  if (!want.some((w) => got.includes(w))) { fail++; console.log(`FAIL  "${q}" → want ${want.join(' or ')} in top ${n}; got ${search(index, q).slice(0, 5).map((e) => e.code).join(', ')}`); }
+}
+for (const [q, want, n] of cases) {
+  const got = search(index, q).filter((e) => !sets.has(e.code)).slice(0, n).map((e) => e.code);
   if (!want.some((w) => got.includes(w))) {
     fail++;
     console.log(`FAIL  "${q}" → want ${want.join(' or ')} in top ${n}; got ${search(index, q).slice(0, 5).map((e) => e.code).join(', ') || '(none)'}`);
@@ -200,5 +215,6 @@ for (const r of rows) {
   const got = search(index, r.title).slice(0, 3).map((e) => e.code);
   if (!got.includes(r.dot)) { fail++; console.log(`FAIL  title "${r.title}" → .${r.dot} not in top 3 (${got.join(', ')})`); }
 }
-console.log(`${cases.length + rows.length - fail}/${cases.length + rows.length} search checks passed`);
+const total = cases.length + setCases.length + rows.length;
+console.log(`${total - fail}/${total} search checks passed`);
 process.exit(fail ? 1 : 0);

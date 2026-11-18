@@ -4,7 +4,7 @@ add("GU & Renal", [
   ["*stonemdm", "MDM", "Renal colic / kidney stone", "kidney stone|renal colic|nephrolithiasis|n20.0|ureterolithiasis|n20.1|flank pain|r10.9|ureteral stone|n23", ["N20.0", "N20.1", "N23"],
 `MDM: ***-year-old with {right/left} flank pain radiating to the groin ***.
 Considered ureterolithiasis, pyelonephritis/infected stone, AAA (age ***), renal infarct, appendicitis/diverticulitis, biliary disease, {ectopic pregnancy, ovarian torsion} and testicular torsion.
-UA ***; creatinine ***; {hCG ***}. Imaging: {CT: *** mm stone at *** with {no/mild/moderate} hydronephrosis / bedside US: ***}.
+UA ***; creatinine ***; {hCG ***}. Imaging: {CT: *** mm stone at *** with *** hydronephrosis / bedside US: ***}.
 No signs of infection or AKI. Treatment: {ketorolac ***, ***}. Pain controlled, tolerating PO.
 Plan: {tamsulosin for distal stone 5–10 mm}, analgesia, strainer, urology follow-up. Return for fever, uncontrolled pain or vomiting.`],
   ["stonedc", "Discharge", "Kidney stone, discharge", "kidney stone discharge|renal colic|kidney stone|nephrolithiasis|flank pain", ["N20.1"],

@@ -19,11 +19,15 @@ export const CATEGORIES = [
   'ID & Sepsis', 'Tox & Environmental', 'Endo & Heme', 'Psych', 'Peds', 'Skin, HEENT & Eye',
   'Procedures', 'General',
 ];
-export const TYPES = ['MDM', 'Discharge', 'Procedure', 'Score', 'Exam', 'Note'];
+export const TYPES = ['Set', 'MDM', 'Discharge', 'Procedure', 'Score', 'Exam', 'Note'];
 
 function loadData() {
   const rows = [];
+  const calcs = {}, sets = [], reviews = {};
   let current = '';
+  const calc = (dot, spec) => { calcs[dot] = { ...spec, file: current }; };
+  const set = (dot, title, imp, members) => sets.push({ dot, title, imp, members, file: current });
+  const reviewed = (dot, by, date) => { reviews[dot] = [by, date, current]; };
   const add = (cat, items) => {
     for (const it of items) {
       let [dot, type, title, imp = '', icd = [], text = ''] = it;
@@ -35,11 +39,24 @@ function loadData() {
   const files = fs.readdirSync(DATA_DIR).filter((f) => f.endsWith('.js')).sort();
   for (const f of files) {
     current = f;
-    vm.runInNewContext(fs.readFileSync(path.join(DATA_DIR, f), 'utf8'), { add }, { filename: f });
+    vm.runInNewContext(fs.readFileSync(path.join(DATA_DIR, f), 'utf8'), { add, calc, set, reviewed }, { filename: f });
+  }
+  // Note sets become rows of their own (type "Set"): the members' texts joined in order.
+  const byDot = new Map(rows.map((r) => [r.dot, r]));
+  const setErrors = [];
+  for (const st of sets) {
+    const members = st.members.map((d) => byDot.get(d));
+    const missing = st.members.filter((d, i) => !members[i]);
+    if (missing.length) { setErrors.push(`${st.file}: set .${st.dot} names missing phrase(s) ${missing.join(', ')}`); continue; }
+    rows.push({
+      dot: st.dot, type: 'Set', title: st.title, imp: st.imp,
+      icd: [...new Set(members.flatMap((m) => m.icd))], text: members.map((m) => m.text).join('\n\n'),
+      cat: members[0].cat, p: 1, file: st.file, members: st.members,
+    });
   }
   const icdFile = path.join(DATA_DIR, 'icd10.json');
   const icd = fs.existsSync(icdFile) ? JSON.parse(fs.readFileSync(icdFile, 'utf8')) : {};
-  return { rows, icd };
+  return { rows, icd, calcs, reviews, setErrors };
 }
 
 export function loadRows() { return loadData().rows; }
@@ -67,6 +84,7 @@ export function validate(rows, icd = null) {
     // {a/b} choices must be balanced so Epic users can see where to pick.
     const open = (r.text.match(/{/g) || []).length, close = (r.text.match(/}/g) || []).length;
     if (open !== close) errors.push(`${id}: unbalanced { } in text`);
+    if (/\{[^}]*\{/.test(r.text)) errors.push(`${id}: nested { } in text`);
     if (icd) for (const c of r.icd) if (!icd[c]) errors.push(`${id}: ${c} missing from data/icd10.json (run python3 tools/icd-labels.py)`);
   }
   return errors;
@@ -106,7 +124,13 @@ function listFiles(dir) {
 
 function build() {
   const data = loadData();
-  const errors = validate(data.rows, data.icd);
+  const errors = [...validate(data.rows, data.icd), ...data.setErrors];
+  const dots = new Set(data.rows.map((r) => r.dot));
+  for (const [dot, c] of Object.entries(data.calcs)) {
+    if (!dots.has(dot)) errors.push(`${c.file}: calculator for missing phrase .${dot}`);
+    if (!c.items?.length || !c.bands?.length) errors.push(`${c.file}: calculator .${dot} needs items and bands`);
+  }
+  for (const [dot, [, , file]] of Object.entries(data.reviews)) if (!dots.has(dot)) errors.push(`${file}: review for missing phrase .${dot}`);
   if (errors.length) {
     console.error(`Data validation failed (${errors.length}):\n  ` + errors.join('\n  '));
     process.exit(1);
@@ -116,7 +140,7 @@ function build() {
   fs.rmSync(OUT, { recursive: true, force: true });
   fs.mkdirSync(path.join(OUT, 'icons'), { recursive: true });
   fs.mkdirSync(path.join(OUT, 'fonts'), { recursive: true });
-  for (const f of ['index.html', 'app.css', 'app.js', 'search.js', 'manifest.webmanifest']) {
+  for (const f of ['index.html', 'app.css', 'app.js', 'search.js', 'fill.js', 'config.js', 'manifest.webmanifest']) {
     fs.copyFileSync(path.join(SRC, f), path.join(OUT, f));
   }
   for (const f of fs.readdirSync(path.join(SRC, 'icons'))) {
@@ -144,10 +168,16 @@ function build() {
     `export const TEXT = ${JSON.stringify(Object.fromEntries(rows.map((r) => [r.dot, r.text])))};\n` +
     `export const DX = ${JSON.stringify(Object.fromEntries(rows.filter((r) => r.icd.length).map((r) => [r.dot, r.icd])))};\n` +
     `export const ICD = ${JSON.stringify(usedIcd)};\n` +
+    `export const CALCS = ${JSON.stringify(Object.fromEntries(Object.entries(data.calcs).map(([k, { file, ...v }]) => [k, v])))};\n` +
+    `export const SETS = ${JSON.stringify(Object.fromEntries(rows.filter((r) => r.members).map((r) => [r.dot, r.members])))};\n` +
+    `export const REVIEWS = ${JSON.stringify(Object.fromEntries(Object.entries(data.reviews).map(([k, [by, date]]) => [k, [by, date]])))};\n` +
     `export default ${JSON.stringify(compactRows(rows))};\n`);
 
   const renames = [];
-  for (const f of ['data.js', 'search.js']) renames.push([f, fingerprint(f)]);
+  for (const f of ['data.js', 'search.js', 'config.js']) renames.push([f, fingerprint(f)]);
+  const fillPath = path.join(OUT, 'fill.js');
+  fs.writeFileSync(fillPath, rewrite(fs.readFileSync(fillPath, 'utf8'), renames));
+  renames.push(['fill.js', fingerprint('fill.js')]);
   const appPath = path.join(OUT, 'app.js');
   fs.writeFileSync(appPath, rewrite(fs.readFileSync(appPath, 'utf8'), renames));
   for (const f of ['app.js', 'app.css']) renames.push([f, fingerprint(f)]);

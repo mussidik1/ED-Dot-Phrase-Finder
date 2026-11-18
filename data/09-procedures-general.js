@@ -5,9 +5,9 @@ add("Procedures", [
 `Procedure: laceration repair
 Consent: {verbal/written} after discussing risks (infection, scarring, dehiscence, retained foreign body) and benefits.
 Location: ***. Length: *** cm. Complexity: {simple / intermediate (layered) / complex}.
-Anesthesia: *** mL of {1% lidocaine {with/without} epinephrine / ***} by {local infiltration / digital block}.
+Anesthesia: *** mL of {1% lidocaine with epinephrine / 1% lidocaine without epinephrine / ***} by {local infiltration / digital block}.
 Prep: irrigated with *** mL normal saline; explored in bloodless field; no foreign body or deep structure involvement.
-Closure: {*** × ***-0 {nylon/Prolene/Vicryl Rapide} simple interrupted / deep layer *** × ***-0 Vicryl / staples ×*** / tissue adhesive}.
+Closure: {*** × ***-0 *** (nylon, Prolene or Vicryl Rapide) simple interrupted / deep layer *** × ***-0 Vicryl / staples ×*** / tissue adhesive}.
 Estimated blood loss minimal. Patient tolerated well; no complications. Distal neurovascular status intact after repair.`],
   ["*indprocedure", "Procedure", "Incision and drainage", "incision and drainage|i&d|i and d|abscess drainage|abscess|boil drainage", [],
 `Procedure: incision and drainage of abscess
@@ -67,7 +67,7 @@ Indication: difficult access after *** failed attempts. Site: {right/left} ***. 
   ["pocus", "Exam", "Point-of-care ultrasound (FAST / cardiac)", "pocus|bedside ultrasound|fast|efast|fast exam|cardiac ultrasound|echo|bedside echo|rush exam", [],
 `Point-of-care ultrasound performed and interpreted by me for ***.
 {FAST/eFAST: no free fluid in RUQ, LUQ, pelvis or pericardium; lung sliding present bilaterally / ***.}
-{Cardiac: pericardial effusion ***; LV function {normal/decreased}; RV {not dilated/dilated}; IVC ***.}
+{Cardiac: pericardial effusion ***; LV function ***; RV ***; IVC ***.}
 Images saved to ***.`],
   ["cprnote", "Procedure", "Cardiac arrest / CPR", "cardiac arrest|cpr|code|i46.9|resuscitation|rosc|cardiopulmonary resuscitation|pea|asystole|vf arrest", ["I46.9"],
 `Cardiac arrest resuscitation

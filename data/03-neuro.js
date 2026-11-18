@@ -48,7 +48,7 @@ Disposition: neuro ICU. Critical care time *** minutes.`],
   ["menmdm", "MDM", "Meningitis considered", "meningitis|g03.9|neck stiffness|fever headache|encephalitis|lumbar puncture|lp", ["G03.9"],
 `Meningitis/encephalitis considered given ***.
 {Low suspicion: no meningismus, altered mental status, rash or focal deficit; afebrile; well-appearing / LP performed (see procedure note): opening pressure ***, WBC ***, RBC ***, glucose ***, protein ***, Gram stain ***}.
-{Empiric ceftriaxone, vancomycin, {ampicillin for age >50 or immunocompromise}, {acyclovir}, dexamethasone given before LP/imaging at ***.}`],
+{Empiric antibiotics given before LP/imaging at ***: ceftriaxone, vancomycin, dexamethasone, plus *** (ampicillin if age >50 or immunocompromised; acyclovir if encephalitis suspected).}`],
   ["ams", "MDM", "Altered mental status", "altered mental status|ams|r41.82|confusion|delirium|encephalopathy|r41.0|unresponsive|lethargy", ["R41.82", "R41.0"],
 `MDM: ***-year-old with altered mental status, baseline per *** is ***.
 Differential (AEIOU TIPS): alcohol/toxins, electrolytes/endocrine (glucose, Na, Ca, thyroid), infection (UTI, pneumonia, meningitis, sepsis), opioids/overdose, uremia/hepatic encephalopathy, trauma/ICH, insulin, psychiatric, stroke/seizure, hypoxia/hypercarbia.

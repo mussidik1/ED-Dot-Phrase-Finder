@@ -14,6 +14,13 @@ Type a clinical impression and get emergency medicine dot phrase templates: MDMs
 - Forgiving search: impressions as you'd say them ("chest pain", "AFib RVR", "kidney stone", "55 yo male with chest pain"), abbreviations (CP, SOB, AMS, GIB, N/V/D, I&D), typos, ICD-10 codes (`I48.91`) and dot names (`.cpmdm`).
 - One impression returns every matching template. "Chest pain" gives the MDM, HEART score, PERC, ECG read and discharge instructions.
 - Tap a card to copy its full text. "Show full text" previews it with blanks (`***`) and choices (`{a/b}`) highlighted. Star favorites; recently copied phrases show on the home screen.
+- **Fill in and copy:** tap the options, type into the blanks, copy finished text. Nothing typed is saved.
+- **Calculators** on HEART, Wells PE, PERC, CURB-65, NEXUS and Canadian CT Head; copy a one-line result.
+- **Full-note sets** build the provider note for an impression from several phrases in one copy (`data/sets.js`).
+- **My phrases:** edit any template or write your own, saved on the device; export/import files, including group "packs".
+- **Shared library** (Supabase): optionally submit a phrase for review; approved ones appear under Community. Optional, off-by-default reporting of searches that find nothing.
+- Spanish discharge instructions for common complaints (have a certified interpreter review them).
+- Each card shows its clinical review status (`data/reviews.js`, named human reviewers only).
 - Typical ICD-10-CM codes on each impression; tap one to copy it.
 - Same look and settings as the CPT Look-Up Tool: navy, light or match-device colors, three text sizes.
 
@@ -35,6 +42,10 @@ The database is the `data/` folder in this repo, one file per section, one row p
 | text | The template. `***` = blank to fill. `{this/that}` = pick one. |
 
 To add your group's own phrases, add rows (or a new `data/10-*.js` file) and redeploy. A group's Epic SmartPhrases can be exported or shared from SmartPhrase Manager; paste the text into a row and keep their name as the dot name.
+
+## Shared library (Supabase)
+
+Project `ed-dot-phrase-finder`, tables `submissions` and `search_gaps`, with row-level security: the public key can only insert pending submissions, read approved ones, and insert empty-search words. To approve a phrase, open the Supabase dashboard → Table editor → `submissions`, and change `status` from `pending` to `approved`. The most-missed searches are in the `top_search_gaps` view (SQL editor: `select * from top_search_gaps;`).
 
 ## Build and publish
 
