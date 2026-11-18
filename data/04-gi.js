@@ -3,7 +3,7 @@
 add("GI", [
   ["*abdmdm", "MDM", "Abdominal pain", "abdominal pain|abd pain|r10.9|belly pain|stomach pain|r10.84|epigastric pain|r10.13|r10.31|rlq pain|ruq pain|r10.11|llq pain", ["R10.9", "R10.84"],
 `MDM: ***-year-old with *** abdominal pain for ***.
-Differential includes appendicitis, cholecystitis/biliary colic, pancreatitis, bowel obstruction, perforation, diverticulitis, mesenteric ischemia, AAA, nephrolithiasis, pyelonephritis, {ectopic pregnancy, ovarian torsion, PID, TOA}, testicular torsion, ACS/inferior MI, lower-lobe pneumonia, DKA and gastroenteritis.
+Differential includes appendicitis, cholecystitis/biliary colic, pancreatitis, bowel obstruction, perforation, diverticulitis, mesenteric ischemia, AAA, nephrolithiasis, pyelonephritis, {ectopic pregnancy, ovarian torsion, PID, TOA}, testicular torsion, ACS/inferior MI, lower-lobe pneumonia, DKA and gastroenteritis. {Not pursued further: *** because ***.}
 - Exam: ***. Peritoneal signs: {absent/present}.
 - Labs: CBC ***, CMP ***, lipase ***, UA ***, {hCG ***}.
 - Imaging: ***.
@@ -23,7 +23,7 @@ Treatment: IV fluids, analgesia (***), antibiotics *** at ***.
 Surgery (Dr. ***) consulted at ***; plan for ***. NPO.`],
   ["*cholemdm", "MDM", "Biliary colic / cholecystitis", "cholecystitis|biliary colic|gallstones|cholelithiasis|k80.20|k81.0|k80.00|ruq pain|gallbladder|choledocholithiasis|cholangitis", ["K80.20", "K81.0", "K80.00"],
 `MDM: ***-year-old with RUQ/epigastric pain ***.
-Considered cholecystitis, choledocholithiasis, cholangitis, pancreatitis, hepatitis, peptic ulcer, ACS and right lower lobe pneumonia.
+Considered cholecystitis, choledocholithiasis, cholangitis, pancreatitis, hepatitis, peptic ulcer, ACS and right lower lobe pneumonia. {Not pursued further: *** because ***.}
 Labs: WBC ***, LFTs ***, lipase ***. RUQ ultrasound: ***.
 Assessment: {symptomatic cholelithiasis without cholecystitis; pain controlled; outpatient surgery referral / acute cholecystitis: antibiotics ***, surgery consulted / concern for choledocholithiasis/cholangitis: GI consulted for ERCP}.`],
   ["*pancmdm", "MDM", "Acute pancreatitis", "pancreatitis|acute pancreatitis|k85.90|k85.20|alcoholic pancreatitis|gallstone pancreatitis|k85.10|elevated lipase", ["K85.90", "K85.20", "K85.10"],
@@ -48,7 +48,7 @@ Treatment: 2 large-bore IVs, {PRBC *** units for Hgb <7 (<8 if cardiac disease)}
 GI (Dr. ***) consulted. Disposition: ***.`],
   ["*gastromdm", "MDM", "Gastroenteritis / vomiting and diarrhea", "gastroenteritis|age|a09|nausea vomiting|n/v|vomiting|r11.2|diarrhea|r19.7|stomach bug|n v d|food poisoning|k52.9", ["A09", "R11.2", "R19.7"],
 `MDM: ***-year-old with *** days of {nausea/vomiting/diarrhea}. Blood in stool, high fever or severe localized pain: {none reported / ***}.
-Considered appendicitis, obstruction, pancreatitis, biliary disease, DKA, pregnancy, inferior MI, C. difficile (antibiotics: ***), toxic ingestion and increased ICP.
+Considered appendicitis, obstruction, pancreatitis, biliary disease, DKA, pregnancy, inferior MI, C. difficile (antibiotics: ***), toxic ingestion and increased ICP. {Not pursued further: *** because ***.}
 Exam: abdomen soft, ***; mucous membranes ***.
 {Labs: ***.}
 Treatment: {ondansetron ***, IV fluids ***}. PO challenge: {tolerated / ***}.
@@ -64,7 +64,7 @@ Assessment: likely viral gastroenteritis. Discharged with antiemetic, hydration 
 Return for vomiting that won't stop, no urine for 8 hours, blood in vomit or stool, black stools, severe belly pain, high fever, or feeling faint or confused.`],
   ["constipmdm", "MDM", "Constipation", "constipation|k59.00|obstipation|fecal impaction|k56.41|no bowel movement", ["K59.00", "K56.41"],
 `MDM: ***-year-old with constipation, last bowel movement ***. Passing flatus: ***.
-Considered obstruction, volvulus, impaction, hypothyroidism, hypercalcemia, opioid/anticholinergic effect and malignancy (age, weight loss, blood: ***).
+Considered obstruction, volvulus, impaction, hypothyroidism, hypercalcemia, opioid/anticholinergic effect and malignancy (age, weight loss, blood: ***). {Not pursued further: *** because ***.}
 Exam: abdomen soft, nondistended, ***. Rectal: ***.
 Treatment: ***. Results: ***.
 Discharge with bowel regimen (polyethylene glycol 17 g daily, ***), fluids and fiber; PCP follow-up.`],

@@ -1,4 +1,4 @@
-import DATA, { CATEGORIES as BASE_CATS, COUNTS, TEXT as BASE_TEXT, DX, ICD, CALCS, SETS, REVIEWS } from './data.js';
+import DATA, { CATEGORIES as BASE_CATS, COUNTS, TEXT as BASE_TEXT, DX, ICD, CALCS, SETS, REVIEWS, DOSING } from './data.js';
 import { createIndex, search, highlight, escapeHtml } from './search.js';
 import { render as fillRender, pick, compose, progress, calcHTML, calcState } from './fill.js';
 import { SUPABASE_URL, SUPABASE_KEY } from './config.js';
@@ -109,17 +109,23 @@ function reviewHTML(code) {
 function extrasHTML(e) {
   const parts = [];
   if (CALCS[e.code]) parts.push(`<details class="tpl calc-wrap" data-calc-open="${e.code}"><summary>Calculate</summary><div class="calc-slot"></div></details>`);
+  if (e.code === 'pedsdose' && DOSING.length) parts.push(`<details class="tpl calc-wrap" data-dose-open="1" open><summary>Calculate doses</summary><div class="dose-slot"></div></details>`);
   const members = SETS[e.code];
   parts.push(`<details class="tpl" data-fill-open="${e.code}"><summary>${members ? 'Fill in the full note' : 'Fill in and copy'}</summary>
     ${members ? `<p class="set-list">Includes ${members.map((m) => `<span class="mono">.${escapeHtml(m)}</span>`).join(', ')}, in that order.</p>` : ''}
     <div class="fill" data-fill="${e.code}"></div>
     <p class="fill-progress" aria-live="polite"></p>
-    <div class="actions">
+    <div class="actions sticky">
       <button class="act primary" type="button" data-copy-filled="${e.code}">Copy filled text</button>
+      <button class="act" type="button" data-next-blank="${e.code}">Next blank</button>
+    </div>
+    <div class="actions">
       <button class="act" type="button" data-copy="${e.code}">Copy blank template</button>
       <button class="act" type="button" data-fill-reset="${e.code}">Clear</button>
       <button class="act" type="button" data-copyname="${e.code}">Copy .${escapeHtml(e.code)}</button>
       <button class="act" type="button" data-edit="${e.code}">${SOURCE[e.code]?.kind === 'mine' ? 'Edit' : 'Make my version'}</button>
+    </div>
+    <div class="actions">
       ${SOURCE[e.code]?.kind === 'mine' ? `<button class="act danger" type="button" data-delete="${e.code}">Delete</button>` : ''}
     </div>
     ${reviewHTML(e.code)}
@@ -346,6 +352,12 @@ on(resultsEl, 'click', (ev) => {
   if (filled) { copyFilled(filled.dataset.copyFilled, filled); return; }
   const reset = t.closest('[data-fill-reset]');
   if (reset) { const box = resultsEl.querySelector(`.fill[data-fill="${reset.dataset.fillReset}"]`); drawFill(box, true); return; }
+  const nb = t.closest('[data-next-blank]');
+  if (nb) { nextBlank(nb.dataset.nextBlank); return; }
+  const unit = t.closest('[data-unit]');
+  if (unit) { doseUnit = unit.dataset.unit; drawDoseResults(unit.closest('.dose')); return; }
+  const dcopy = t.closest('[data-dose-copy]');
+  if (dcopy) { copyDose(dcopy); return; }
   // calculators
   const copt = t.closest('.calc .opt');
   if (copt) { calcPick(copt); return; }
@@ -370,9 +382,76 @@ resultsEl.addEventListener('toggle', (ev) => {
   const d = ev.target;
   if (!d.open) return;
   if (d.dataset.fillOpen) { const box = d.querySelector('.fill'); if (!box.dataset.drawn) drawFill(box); }
+  if (d.dataset.doseOpen) { const slot = d.querySelector('.dose-slot'); if (!slot.firstChild) drawDosing(slot); }
   if (d.dataset.calcOpen) { const slot = d.querySelector('.calc-slot'); if (!slot.firstChild) slot.innerHTML = calcHTML(d.dataset.calcOpen, CALCS[d.dataset.calcOpen]); }
 }, true);
-on(resultsEl, 'input', (ev) => { const box = ev.target.closest('.fill'); if (box) updateProgress(box); });
+on(resultsEl, 'input', (ev) => {
+  const box = ev.target.closest('.fill'); if (box) updateProgress(box);
+  const dose = ev.target.closest('.dose'); if (dose) drawDoseResults(dose);
+});
+// Enter in a blank jumps to the next empty blank.
+on(resultsEl, 'keydown', (ev) => {
+  if (ev.key !== 'Enter' || !ev.target.classList.contains('fill-in')) return;
+  ev.preventDefault(); nextBlank(ev.target.closest('.fill').dataset.fill, ev.target);
+});
+function nextBlank(code, from) {
+  const box = resultsEl.querySelector(`.fill[data-fill="${code}"]`);
+  if (!box) return;
+  const all = [...box.querySelectorAll('.fill-in')];
+  const start = from ? all.indexOf(from) + 1 : 0;
+  const next = [...all.slice(start), ...all.slice(0, start)].find((el) => !el.value.trim());
+  if (next) { next.focus(); next.scrollIntoView({ block: 'center', behavior: 'smooth' }); }
+  else { const unpicked = box.querySelector('.choice:not(.done) .opt'); if (unpicked) { unpicked.scrollIntoView({ block: 'center', behavior: 'smooth' }); toast('All blanks filled. Pick the remaining options.'); } else toast('Everything is filled in'); }
+}
+
+// ---------- pediatric dosing helper (nothing is stored) ----------
+let doseUnit = 'kg';
+function drawDosing(slot) {
+  slot.innerHTML = `<div class="dose">
+    <label class="dose-weight">Weight <input class="dose-in" type="text" inputmode="decimal" autocomplete="off" autocorrect="off" placeholder="0" aria-label="Weight">
+      <span class="unit-pick" role="group" aria-label="Unit"><button type="button" class="opt" data-unit="kg">kg</button><button type="button" class="opt" data-unit="lb">lb</button></span></label>
+    <p class="dose-check" aria-live="polite"></p>
+    <div class="dose-list"></div>
+    <p class="small">Common ED doses, not orders. Check the product label, your pharmacy and local protocols.</p>
+  </div>`;
+  drawDoseResults(slot.querySelector('.dose'));
+}
+const round1 = (n) => Math.round(n * 10) / 10;
+function drawDoseResults(box) {
+  if (!box) return;
+  box.querySelectorAll('[data-unit]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.unit === doseUnit)));
+  const raw = parseFloat((box.querySelector('.dose-in').value || '').replace(',', '.'));
+  const kg = Number.isFinite(raw) && raw > 0 ? (doseUnit === 'lb' ? raw / 2.2046 : raw) : 0;
+  const check = box.querySelector('.dose-check');
+  const list = box.querySelector('.dose-list');
+  if (!kg) { check.textContent = 'Enter the child’s weight. Tap kg or lb to match the scale.'; list.innerHTML = ''; return; }
+  const warn = kg < 2 || kg > 100 ? ' This weight is unusual for a child; check kg vs lb.' : '';
+  check.innerHTML = `<b>${round1(kg)} kg</b> (${round1(kg * 2.2046)} lb).${warn}`;
+  check.classList.toggle('warn', !!warn);
+  list.innerHTML = DOSING.map((d, i) => {
+    let mg, how;
+    if (d.bands) {
+      const b = d.bands.find(([lo, hi]) => kg >= lo && kg < hi);
+      if (!b) return `<div class="dose-row"><p class="dose-name">${escapeHtml(d.name)}</p><p class="small">${escapeHtml(d.note)}</p></div>`;
+      mg = b[2]; how = `${mg} mg (weight band ${b[0]}–${b[1] === 999 ? '' : b[1]} kg)`;
+    } else {
+      const calc = d.mgPerKg * kg; mg = Math.min(calc, d.maxMg);
+      how = `${d.mgPerKg} mg/kg = ${round1(calc)} mg${calc > d.maxMg ? `, capped at max ${d.maxMg} mg` : ''}`;
+      mg = mg >= 10 ? Math.round(mg) : round1(mg);
+    }
+    const forms = d.conc.map(([label, mgPerMl]) => (mgPerMl ? `${round1(mg / mgPerMl)} mL of ${label}` : label)).join(' · ');
+    const line = `${d.name} ${mg} mg PO (${how}); ${d.conc.map(([label, mgPerMl]) => (mgPerMl ? `${round1(mg / mgPerMl)} mL of ${label}` : label)).join(' or ')}; ${d.freq}. Weight ${round1(kg)} kg.`;
+    return `<div class="dose-row"><p class="dose-name">${escapeHtml(d.name)} <span class="small">${escapeHtml(d.use)}</span></p>
+      <p class="dose-amt"><b>${mg} mg</b> · ${escapeHtml(forms)}</p>
+      <p class="small">${escapeHtml(how)}; ${escapeHtml(d.freq)}. ${escapeHtml(d.note || '')}</p>
+      <button class="act" type="button" data-dose-copy="${i}" data-line="${escapeHtml(line)}">Copy dose line</button></div>`;
+  }).join('');
+}
+async function copyDose(btn) {
+  const ok = await copyText(btn.dataset.line);
+  toast(ok ? 'Copied dose line' : 'Couldn’t copy on this device.');
+  flash(btn);
+}
 
 // ---------- fill-in ----------
 function drawFill(box, cleared = false) {

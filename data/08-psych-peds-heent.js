@@ -23,7 +23,7 @@ Monitoring: continuous SpO₂ and cardiac monitoring after sedation; airway ***,
 Medical causes considered: hypoglycemia, hypoxia, intoxication/withdrawal, head injury, infection, thyroid storm, hyperthermia.`],
   ["panic", "MDM", "Anxiety / panic attack", "anxiety|panic attack|f41.0|f41.9|panic disorder|anxious|hyperventilation", ["F41.0", "F41.9"],
 `MDM: ***-year-old with episode of {palpitations/chest tightness/dyspnea/paresthesias} with anxiety, onset ***.
-Considered ACS, arrhythmia, PE, thyrotoxicosis, hypoglycemia, substance use/withdrawal and asthma; ECG ***, ***.
+Considered ACS, arrhythmia, PE, thyrotoxicosis, hypoglycemia, substance use/withdrawal and asthma; ECG ***, ***. {Not pursued further: *** because ***.}
 Symptoms resolved with ***. Assessment: panic attack. Denies SI/HI.
 Discharged with PCP/behavioral health follow-up, coping strategies and resources.`],
 ]);
@@ -32,7 +32,7 @@ add("Peds", [
   ["*pedsfever", "MDM", "Pediatric fever", "pediatric fever|peds fever|fever child|r50.9|febrile infant|fever without source|fussy|r50.9 child|fever in child", ["R50.9"],
 `MDM: ***-{month/year}-old {fully/partially/not} immunized presenting with fever T max *** for ***.
 Appearance: {well-appearing, interactive, consolable / ***}. Hydration ***.
-Considered serious bacterial infection (UTI, pneumonia, bacteremia, meningitis), otitis media, pharyngitis, viral illness, {Kawasaki (fever ≥5 days: ***)}, and osteomyelitis/septic joint.
+Considered serious bacterial infection (UTI, pneumonia, bacteremia, meningitis), otitis media, pharyngitis, viral illness, {Kawasaki (fever ≥5 days: ***)}, and osteomyelitis/septic joint. {Not pursued further: *** because ***.}
 {Febrile infant 8–60 days, well-appearing, ≥37 weeks: risk-stratified per AAP 2021 guideline: UA ***, procalcitonin ***, ANC ***, CRP ***, LP ***. / Age 0–7 days or ill-appearing: full sepsis evaluation including LP, empiric antibiotics, admission.}
 Testing: ***. Source: ***.
 Disposition: ***. Antipyretic dosing by weight (*** kg) with concentration specified, and return precautions reviewed with caregiver.`],
@@ -52,12 +52,12 @@ Return now for trouble breathing, a stiff neck, spots on the skin that stay red 
 `MDM: ***-month-old with *** days of rhinorrhea, cough and increased work of breathing, consistent with viral bronchiolitis.
 Risk factors (prematurity, age <12 weeks, chronic lung/heart disease, immunodeficiency): ***.
 After nasal suctioning: RR ***, retractions ***, SpO₂ *** on room air, feeding ***.
-Considered pneumonia, foreign body, heart failure and pertussis. Testing not routinely indicated.
+Considered pneumonia, foreign body, heart failure and pertussis. Testing not routinely indicated. {Not pursued further: *** because ***.}
 Treatment: supportive (suctioning, hydration). Albuterol, steroids and antibiotics not indicated.
 Disposition: {discharge; feeding well, SpO₂ ≥90–92% on room air, reliable caregiver / admit for ***}.`],
   ["croup", "MDM", "Croup", "croup|j05.0|barky cough|stridor|laryngotracheobronchitis|westley", ["J05.0"],
 `MDM: ***-year-old with barky cough {and stridor} for ***. Westley score *** ({mild/moderate/severe}).
-Considered epiglottitis, bacterial tracheitis, retropharyngeal abscess, foreign body and anaphylaxis: drooling, toxicity or tripoding {absent / ***}.
+Considered epiglottitis, bacterial tracheitis, retropharyngeal abscess, foreign body and anaphylaxis: drooling, toxicity or tripoding {absent / ***}. {Not pursued further: *** because ***.}
 Treatment: dexamethasone {0.6 mg/kg (max 16 mg) / 0.15–0.3 mg/kg} PO, {racemic epinephrine *** at ***, observed *** hours (per local policy, typically 2–4 h) without recurrent stridor at rest}.
 Disposition: ***.`],
   ["pedshead", "Score", "PECARN head injury (summary)", "pediatric head injury|peds head trauma|child head injury|head injury child|s09.90xa", ["S09.90XA"],
@@ -66,9 +66,9 @@ High-risk: GCS ***; altered mental status ***; {<2 y: palpable skull fracture **
 Intermediate-risk: {<2 y: non-frontal scalp hematoma ***; LOC ≥5 s ***; severe mechanism ***; not acting normally per parent *** / ≥2 y: any LOC ***; vomiting ***; severe mechanism ***; severe headache ***}.
 Risk tier: {very low (ciTBI <0.02% if <2 y, <0.05% if ≥2 y): CT not indicated / intermediate: observation vs CT by shared decision-making with caregiver / high: CT recommended}.
 Discussed with caregiver; {observed *** h with no deterioration / ***}.`],
-  ["aommdm", "MDM", "Acute otitis media", "otitis media|aom|h66.90|h66.91|ear infection|ear pain|h92.09|otalgia", ["H66.90", "H92.09"],
+  ["*aommdm", "MDM", "Acute otitis media", "otitis media|aom|h66.90|h66.91|ear infection|ear pain|h92.09|otalgia", ["H66.90", "H92.09"],
 `MDM: ***-year-old with ear pain {and fever} for ***. TM: {bulging, erythematous, decreased mobility / ***}.
-Considered otitis externa, mastoiditis (postauricular swelling or protrusion: {none / ***}), foreign body, TMJ and referred pain.
+Considered otitis externa, mastoiditis (postauricular swelling or protrusion: {none / ***}), foreign body, TMJ and referred pain. {Not pursued further: *** because ***.}
 Assessment: acute otitis media {right/left/bilateral}.
 Plan: {amoxicillin 80–90 mg/kg/day divided BID ×*** days (10 days if <2 y; 7 days 2–5 y; 5–7 days ≥6 y) / amoxicillin-clavulanate *** (amoxicillin in past 30 days or otitis-conjunctivitis) / watchful waiting with safety-net prescription (6–23 mo: nonsevere unilateral; ≥24 mo: nonsevere unilateral or bilateral)} and analgesia. Follow up if not improving in 48–72 h.`],
   ["nat", "MDM", "Child maltreatment considered", "child abuse|nat|non accidental trauma|t74.12xa|t76.12xa|maltreatment|sentinel injury|t74.92xa", ["T76.12XA", "T74.12XA"],
@@ -84,7 +84,7 @@ add("Skin, HEENT & Eye", [
   ["eyemdm", "MDM", "Red eye / eye pain", "red eye|eye pain|h57.10|conjunctivitis|h10.9|corneal abrasion|s05.00xa|pink eye|foreign body eye|t15.90xa|h57.13", ["H57.10", "H10.9", "S05.00XA"],
 `MDM: ***-year-old with {right/left} eye {pain/redness/foreign body sensation} for ***. Contact lens use ***.
 Visual acuity: OD ***, OS ***. Pupils ***. IOP ***. Fluorescein: ***. Lids everted: ***.
-Considered acute angle-closure glaucoma, keratitis (including contact-lens related), iritis, scleritis, globe rupture, endophthalmitis, orbital cellulitis and HSV/zoster.
+Considered acute angle-closure glaucoma, keratitis (including contact-lens related), iritis, scleritis, globe rupture, endophthalmitis, orbital cellulitis and HSV/zoster. {Not pursued further: *** because ***.}
 Assessment: {corneal abrasion / conjunctivitis / ***}. Treatment: ***. {Pseudomonas coverage for contact lens wearer.} Ophthalmology follow-up {in 24 h / ***}.`],
   ["epistaxis", "MDM", "Epistaxis", "epistaxis|nosebleed|nose bleed|r04.0|anterior epistaxis|posterior epistaxis|rhino rocket", ["R04.0"],
 `MDM: ***-year-old with {right/left} epistaxis for ***. Anticoagulant/antiplatelet ***. BP ***.
@@ -93,7 +93,7 @@ Treatment: {direct pressure 15 min, oxymetazoline / silver nitrate cautery / TXA
 {Hgb ***.} ENT follow-up {in 48–72 h for packing removal}. {Antibiotics not routinely needed for anterior packing.}`],
   ["dentalmdm", "MDM", "Dental pain / abscess", "dental pain|toothache|k08.89|dental abscess|k04.7|tooth pain|dental caries|k02.9|ludwigs", ["K08.89", "K04.7"],
 `MDM: ***-year-old with tooth pain at #*** for ***.
-Considered Ludwig's angina, deep space neck infection, peritonsillar abscess and referred cardiac pain: no trismus, floor-of-mouth swelling, voice change, drooling or systemic toxicity.
+Considered Ludwig's angina, deep space neck infection, peritonsillar abscess and referred cardiac pain: no trismus, floor-of-mouth swelling, voice change, drooling or systemic toxicity. {Not pursued further: *** because ***.}
 Exam: ***.
 Treatment: {dental block (see procedure note)}, analgesia (NSAID + acetaminophen), {antibiotic *** for facial swelling or abscess}. Dental referral within 48 h: ***.`],
   ["rashmdm", "MDM", "Rash", "rash|r21|dermatitis|l30.9|contact dermatitis|l25.9|shingles|herpes zoster|b02.9|hives|scabies|b86|poison ivy", ["R21", "L30.9", "B02.9"],

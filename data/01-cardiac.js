@@ -6,7 +6,7 @@ add("Cardiac", [
   ["*cpmdm", "MDM", "Chest pain", "chest pain|cp|atypical chest pain|chest pressure|chest tightness|r07.9|rule out acs|r/o mi|anginal equivalent", ["R07.9", "R07.89"],
 `MDM: ***-year-old with chest pain. Presentation is {typical/atypical} for ACS.
 
-Differential includes ACS, PE, aortic dissection, pneumothorax, pericarditis/tamponade, esophageal rupture, pneumonia, GERD/esophageal spasm, biliary disease and musculoskeletal pain.
+Differential includes ACS, PE, aortic dissection, pneumothorax, pericarditis/tamponade, esophageal rupture, pneumonia, GERD/esophageal spasm, biliary disease and musculoskeletal pain. {Not pursued further: *** because ***.}
 
 - ECG: *** (independently interpreted; no STEMI/STEMI-equivalent).
 - High-sensitivity troponin: initial ***, repeat ***; delta ***.
@@ -37,20 +37,20 @@ Call 911 (do not drive yourself) for chest pain that is worse or lasts more than
 
 Cath lab activated at ***. Interventional cardiology (Dr. ***) contacted at ***.
 Given: aspirin *** mg chewed, heparin *** units IV (weight-based per protocol), {P2Y12 inhibitor *** per interventionalist / deferred to cath lab}, ***. {Posterior (V7–V9) / right-sided leads: ***.}
-Considered and assessed for aortic dissection before anticoagulation: {no tearing pain, pulse deficit, mediastinal widening / ***}.
+Considered and assessed for aortic dissection before anticoagulation: {no tearing pain, pulse deficit, mediastinal widening / ***}. {Not pursued further: *** because ***.}
 Door-to-ECG *** min. Patient to cath lab at ***.
 {Critical care: see critical care statement.}`],
   ["nstemimdm", "MDM", "NSTEMI / unstable angina", "nstemi|non st elevation mi|i21.4|unstable angina|i20.0|acs|acute coronary syndrome|elevated troponin|troponin leak", ["I21.4", "I20.0"],
 `MDM: ***-year-old with *** and troponin *** → *** (rising). ECG: *** without STEMI criteria (independently interpreted).
 
-Considered type 2 MI/demand ischemia, myocarditis, PE, dissection, sepsis and renal disease; *** favors type 1 ACS.
+Considered type 2 MI/demand ischemia, myocarditis, PE, dissection, sepsis and renal disease; *** favors type 1 ACS. {Not pursued further: *** because ***.}
 Treatment: aspirin *** mg, heparin {bolus/infusion}, ***. Pain {resolved/persistent}.
 Cardiology (Dr. ***) consulted; recommends ***.
 Disposition: admit to *** for ACS management and possible catheterization. High risk: acute illness posing threat to bodily function, drug therapy requiring intensive monitoring (heparin).`],
   ["*afibmdm", "MDM", "Atrial fibrillation with RVR", "atrial fibrillation|afib|a fib|af rvr|rvr|rapid ventricular response|i48.91|a flutter|atrial flutter|i48.92|irregular heartbeat|palpitations", ["I48.91", "I48.92"],
 `MDM: ***-year-old with {new/known} atrial {fibrillation/flutter} with rapid ventricular response, rate ***. Hemodynamically {stable/unstable}.
 
-Considered precipitants: infection/sepsis, hypovolemia, thyrotoxicosis, PE, ACS, alcohol, electrolyte derangement, medication nonadherence. Workup: ***.
+Considered precipitants: infection/sepsis, hypovolemia, thyrotoxicosis, PE, ACS, alcohol, electrolyte derangement, medication nonadherence. Workup: ***. {Not pursued further: *** because ***.}
 Onset: {<48 h / >48 h / unknown}; CHA₂DS₂-VASc weighed for anticoagulation before cardioversion (2023 ACC/AHA/ACCP/HRS).
 Pre-excitation (WPW) on ECG: {none / present: AV nodal blockers avoided}. Decompensated HFrEF: {no / yes: diltiazem avoided}.
 - Rate control: *** (diltiazem *** mg IV / metoprolol *** mg IV), rate now ***.
@@ -68,13 +68,13 @@ Return or call 911 for chest pain, fainting, trouble breathing, a heart rate tha
   ["*chfmdm", "MDM", "Heart failure exacerbation", "chf|heart failure|chf exacerbation|acute decompensated heart failure|adhf|i50.9|i50.23|i50.33|volume overload|fluid overload|pulmonary edema", ["I50.9", "I50.23", "I50.33"],
 `MDM: ***-year-old with {HFrEF/HFpEF}, EF *** %, presenting with dyspnea, orthopnea and *** consistent with acute decompensated heart failure.
 
-Considered precipitants: ACS, arrhythmia, hypertension, dietary/medication nonadherence, infection, renal failure, PE. ECG ***; troponin ***; BNP *** (baseline ***); CXR ***.
+Considered precipitants: ACS, arrhythmia, hypertension, dietary/medication nonadherence, infection, renal failure, PE. ECG ***; troponin ***; BNP *** (baseline ***); CXR ***. {Not pursued further: *** because ***.}
 Treatment: furosemide *** mg IV, {nitroglycerin *** / BiPAP ***}. Response: ***.
 Disposition: {admit for IV diuresis and monitoring / discharge after diuresis with increased home dose and follow-up in 48–72 h}.`],
   ["*syncmdm", "MDM", "Syncope", "syncope|passed out|fainting|loc|r55|near syncope|presyncope|vasovagal|collapse", ["R55"],
 `MDM: ***-year-old with {syncope/near-syncope} while ***. Prodrome: ***. Seizure-like activity, incontinence or prolonged postictal state: {none reported / ***}.
 
-Considered arrhythmia, structural heart disease (AS, HOCM), PE, dissection, SAH, GI bleed, ectopic pregnancy, orthostasis, vasovagal and situational syncope.
+Considered arrhythmia, structural heart disease (AS, HOCM), PE, dissection, SAH, GI bleed, ectopic pregnancy, orthostasis, vasovagal and situational syncope. {Not pursued further: *** because ***.}
 - ECG: *** ({no Brugada, WPW, long QT, high-grade block or HOCM pattern / ***}).
 - Labs: ***. Orthostatics: ***.
 - {Canadian Syncope Risk Score *** / San Francisco Syncope Rule: ***}.
@@ -87,13 +87,13 @@ No evidence of hypertensive emergency. Rapid lowering in the ED is not indicated
 Follow-up with PCP within 1 week for recheck.`],
   ["htnemmdm", "MDM", "Hypertensive emergency", "hypertensive emergency|i16.1|malignant hypertension|hypertensive encephalopathy|pres", ["I16.1"],
 `MDM: ***-year-old with BP *** and evidence of acute end-organ injury: ***.
-Considered dissection, ACS, pulmonary edema, stroke/ICH, PRES, preeclampsia (if applicable) and sympathomimetic toxicity.
+Considered dissection, ACS, pulmonary edema, stroke/ICH, PRES, preeclampsia (if applicable) and sympathomimetic toxicity. {Not pursued further: *** because ***.}
 Workup: ***.
 Treatment: {nicardipine/clevidipine/labetalol} *** with target {≤25% reduction in the first hour / *** for dissection or stroke}.
 Disposition: ICU. {Critical care: see critical care statement.}`],
   ["*dvtmdm", "MDM", "DVT", "dvt|deep vein thrombosis|leg swelling|i82.40|calf pain|unilateral leg swelling|blood clot leg", ["I82.409", "M79.89"],
 `MDM: ***-year-old with {right/left} leg swelling and pain for ***.
-Considered DVT, cellulitis, Baker's cyst, muscle strain/hematoma, superficial thrombophlebitis, lymphedema and compartment syndrome.
+Considered DVT, cellulitis, Baker's cyst, muscle strain/hematoma, superficial thrombophlebitis, lymphedema and compartment syndrome. {Not pursued further: *** because ***.}
 Wells DVT score ***. {D-dimer ***} / Ultrasound: ***.
 No signs of PE (no dyspnea, chest pain, tachycardia or hypoxia). ***
 Plan: {anticoagulation with *** / no DVT found; repeat ultrasound in 1 week if symptoms persist}. Bleeding risk reviewed.`],

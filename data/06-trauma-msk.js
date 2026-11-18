@@ -22,13 +22,13 @@ Return right away for a headache that gets worse, repeated vomiting, confusion, 
   ["mvcmdm", "MDM", "Motor vehicle collision", "mvc|motor vehicle collision|mva|car accident|v43|v49.9xxa|rollover|restrained driver|trauma evaluation", ["V43.52XA", "V49.9XXA"],
 `MDM: ***-year-old {restrained/unrestrained} {driver/passenger} in *** collision at *** mph. Airbag deployment ***. Ambulatory at scene ***.
 Primary survey intact. Secondary survey: ***.
-Considered intracranial injury, C-spine injury, pneumothorax, hemothorax, intra-abdominal/solid-organ injury, pelvic fracture and extremity fractures. Seatbelt sign ***.
+Considered intracranial injury, C-spine injury, pneumothorax, hemothorax, intra-abdominal/solid-organ injury, pelvic fracture and extremity fractures. Seatbelt sign ***. {Not pursued further: *** because ***.}
 Imaging: ***. {FAST ***}.
 Assessment: ***. {No evidence of serious traumatic injury on exam and imaging / ***}. Expect soreness for several days; return precautions for delayed symptoms reviewed.`],
   ["*backmdm", "MDM", "Low back pain", "back pain|low back pain|lbp|m54.50|sciatica|m54.30|lumbago|lumbar strain|s39.012a|radiculopathy|m54.16", ["M54.50", "M54.30", "S39.012A"],
 `MDM: ***-year-old with low back pain for ***, {with/without} radiation to ***.
 Red flags (saddle anesthesia, bowel/bladder dysfunction, progressive or bilateral leg weakness, fever, IV drug use, immunocompromise, cancer, unexplained weight loss, significant trauma, anticoagulation): {none present / present: ***}.
-Considered cauda equina, spinal epidural abscess, vertebral osteomyelitis, fracture, malignancy, AAA, dissection, pyelonephritis and nephrolithiasis.
+Considered cauda equina, spinal epidural abscess, vertebral osteomyelitis, fracture, malignancy, AAA, dissection, pyelonephritis and nephrolithiasis. {Not pursued further: *** because ***.}
 Exam: strength ***, sensation ***, reflexes ***, ***. {Post-void residual ***.}
 Imaging: {not indicated: no red flags / ***}. Assessment: {mechanical low back pain / radiculopathy}. Treatment: ***. Stay active; PCP/PT follow-up.`],
   ["backdc", "Discharge", "Back pain, discharge", "back pain discharge|low back pain|back strain|sciatica", ["M54.50"],
@@ -48,7 +48,7 @@ Assessment: {lateral ankle sprain / ***}. Treatment: {RICE, ankle brace, weight-
   ["fxmdm", "MDM", "Closed fracture", "fracture|fx|closed fracture|broken bone|distal radius fracture|s52.501a|wrist fracture|s62.90xa|clavicle fracture|s42.009a|splint", ["S52.501A", "S62.90XA", "S42.009A"],
 `MDM: ***-year-old with *** after ***. X-ray: ***.
 Skin intact, no tenting (closed fracture). Neurovascularly intact before and after splinting: ***. Compartments soft.
-Considered associated injuries: ***.
+Considered associated injuries: ***. {Not pursued further: *** because ***.}
 Treatment: analgesia ***, {reduction (see procedure note) / no reduction needed}, *** splint applied (see procedure note).
 Orthopedics (Dr. ***) {consulted / follow-up in *** days}. Splint care and compartment syndrome precautions reviewed.`],
   ["lacmdm", "MDM", "Laceration", "laceration|lac|cut|s01.81xa|s61.411a|wound|skin tear|t14.8xxa|repair|sutures", ["S01.81XA", "S61.419A", "T14.8XXA"],
@@ -58,7 +58,7 @@ Explored in a bloodless field: {no foreign body, tendon, nerve, vessel or joint 
 Repaired primarily (see procedure note). Wound care and suture removal in *** days reviewed; return for signs of infection.`],
   ["elderfall", "MDM", "Fall in older adult", "fall|elderly fall|w19.xxxa|w18.30xa|ground level fall|glf|mechanical fall|geriatric fall|found down", ["W19.XXXA", "W18.30XA"],
 `MDM: ***-year-old with fall at *** from {standing/***}. Mechanism: {mechanical trip / unclear / preceded by ***}. Head strike ***; LOC ***; anticoagulant/antiplatelet ***. Time down ***.
-Considered syncope/arrhythmia, stroke, infection, medication effect, dehydration, hypoglycemia, and injuries including ICH, C-spine, hip/pelvic, rib and wrist fractures; rhabdomyolysis if prolonged downtime (CK ***).
+Considered syncope/arrhythmia, stroke, infection, medication effect, dehydration, hypoglycemia, and injuries including ICH, C-spine, hip/pelvic, rib and wrist fractures; rhabdomyolysis if prolonged downtime (CK ***). {Not pursued further: *** because ***.}
 Exam: ***. Workup: ***.
 Assessment: ***. Ambulated safely with {assistance/***} before discharge; {PT/home safety referral}. Medication list reviewed for fall-risk drugs.`],
   ["burnmdm", "MDM", "Burn", "burn|burns|t30.0|thermal burn|scald|t24.011a|t23.201a|sunburn|partial thickness burn", ["T30.0", "T23.201A"],

@@ -39,13 +39,18 @@ Three AI reviewers each read the full phrase database, calculators and app priva
 - Croup low-dose dexamethasone option and observation per local policy; nursemaid's elbow no longer lists "fall" as routine; SCFE adds Lyme arthritis, hip exam for knee pain and maltreatment; maltreatment note adds verbatim history, skeletal survey, labs, siblings and "reasonable suspicion"; febrile infant adds AAP entry criteria and a 0–7 day / ill-appearing branch.
 - Privacy: missed-search reporting is now a manual button that shows the exact words before sending (no automatic sending). Typed blanks clear when the app goes to the background; keyboard autocorrect is off in blanks. Shared submissions are blocked if they look like they contain dates, long numbers, MRN/DOB or names. Clipboard warning added.
 
-## Still open (recommended next)
+## Second release (Nov 18, 2026): open items completed
 
-1. **Named human review.** Have at least one ED attending (and a pediatric EM physician for pediatric phrases) review and sign off; record each in `data/reviews.js`. A certified medical interpreter should review the Spanish text.
-2. **More calculators:** Wells DVT, ADD-RS, sPESI, Canadian Syncope Risk Score, Canadian C-Spine, PECARN febrile infant, Ottawa ankle, Glasgow-Blatchford, CIWA-Ar, Kocher, Westley, hs-troponin 0/1–2 h pathway.
-3. **More impressions:** trauma in pregnancy, ruptured AAA, mesenteric ischemia, necrotizing fasciitis, hyponatremia/hypercalcemia, adrenal crisis, thyroid storm, CO poisoning, salicylate/TCA/beta-blocker/CCB/digoxin toxicity, serotonin syndrome, precipitous delivery and postpartum hemorrhage, sexual assault (with HIV PEP), pediatric DKA, BRUE, intussusception, pediatric asthma, dehydration, button battery/magnet ingestion, hip fracture in older adults, doxy-PEP counseling, chest tube, paracentesis, transcutaneous pacing, nail trephination, trauma activation note, scribe attestation.
-4. **Pediatric discharge instructions** (English and Spanish) for bronchiolitis, croup, AOM, nursemaid's elbow, pediatric head injury, pediatric vomiting with ORS volumes; a weight-based dosing helper with lb/kg guard.
-5. **"Considered …" lists:** consider a "Considered ***; not pursued because ***" pattern and trimming default differentials to reduce exposure when an item isn't worked up.
-6. **Shared library:** rate-limit anonymous inserts (Supabase), and add a simple owner review screen.
-7. **Phone use:** sticky Copy/Clear bar, 44 px tap targets throughout, "next blank" button.
-8. Verify locally: andexanet availability; ACOG 2024 RhIG guidance for early pregnancy loss and ectopic; current SEP-1 specifications for reduced fluid volume; whether a newer AHA/ASA acute ischemic stroke guideline supersedes 2019; state PDMP rules.
+- **Verified against current sources:** andexanet withdrawn from the US market (Dec 2025), so 4F-PCC is the factor Xa inhibitor reversal; ACOG 2024 Rh(D) immune globulin guidance for pregnancy loss under 12 weeks; the 2026 AHA/ASA acute ischemic stroke guideline (tenecteplase or alteplase, BP targets); SEP-1 documentation of a lower fluid volume with a reason; Maryland PDMP query requirement.
+- **12 new calculators:** Wells DVT, ADD-RS, sPESI, Canadian Syncope Risk Score, Canadian C-Spine Rule, PECARN febrile infant, Ottawa ankle/foot, Glasgow-Blatchford, CIWA-Ar, Kocher, Westley, Clinical Dehydration Scale; plus an hs-troponin 0/1–2 h pathway template (assay-specific cutoffs left to the local lab).
+- **31 new templates:** salicylate, TCA, beta-blocker/CCB, digoxin, serotonin syndrome/NMS, carbon monoxide; hyponatremia, hypercalcemia, adrenal crisis, thyroid storm; ruptured AAA, mesenteric ischemia, necrotizing soft tissue infection; precipitous delivery, postpartum hemorrhage, trauma in pregnancy; pediatric DKA, BRUE, intussusception, pediatric asthma, pediatric dehydration, button battery/magnet ingestion; hip fracture, sexual assault (CDC 2021 prophylaxis, HIV nPEP); chest tube, paracentesis, transcutaneous pacing, nail trephination; trauma activation, scribe attestation, PDMP; doxy-PEP counseling (CDC 2024).
+- **12 pediatric discharge instructions** in English and Spanish: bronchiolitis, croup, ear infection, nursemaid's elbow, pediatric head injury, vomiting/diarrhea with oral rehydration volumes.
+- **Pediatric dosing helper:** weight in kg or lb with the conversion always shown and a warning for implausible weights; acetaminophen, ibuprofen (infant vs children's strength), dexamethasone, prednisolone, high-dose amoxicillin, ondansetron weight bands; maximum doses applied; copyable dose line.
+- **"Not pursued because" option** added after the differential in 58 MDM templates.
+- **Phone use:** sticky Copy filled text / Next blank bar, Enter jumps to the next empty blank, 44 px tap targets.
+- **Shared library:** global insert caps (30 submissions and 300 search reports per hour); owner review screen at /review.html (passphrase checked server-side by a Supabase Edge Function; approve, reject, edit, and see top missed searches).
+
+## Still open
+
+1. **Named human review** by an ED attending, a pediatric EM physician for pediatric phrases, and a certified medical interpreter for Spanish text. Record each in `data/reviews.js`.
+2. Re-run an independent review of the 60+ templates added in these two releases before wide use.

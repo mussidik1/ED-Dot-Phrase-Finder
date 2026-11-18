@@ -47,6 +47,10 @@ To add your group's own phrases, add rows (or a new `data/10-*.js` file) and red
 
 Project `ed-dot-phrase-finder`, tables `submissions` and `search_gaps`, with row-level security: the public key can only insert pending submissions, read approved ones, and insert empty-search words. To approve a phrase, open the Supabase dashboard → Table editor → `submissions`, and change `status` from `pending` to `approved`. The most-missed searches are in the `top_search_gaps` view (SQL editor: `select * from top_search_gaps;`).
 
+### Owner review screen
+
+Open `/review.html` on the live site, enter the review passphrase, and approve, edit or reject submissions. It also lists the most common searches that found nothing. The passphrase is checked by the `review` Edge Function against a SHA-256 hash in `app_settings` (readable only with the service role). To change it, update that row with the hash of a new passphrase.
+
 ## Build and publish
 
 ```bash

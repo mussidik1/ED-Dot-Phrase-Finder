@@ -23,11 +23,12 @@ export const TYPES = ['Set', 'MDM', 'Discharge', 'Procedure', 'Score', 'Exam', '
 
 function loadData() {
   const rows = [];
-  const calcs = {}, sets = [], reviews = {};
+  const calcs = {}, sets = [], reviews = {}, drugs = [];
   let current = '';
   const calc = (dot, spec) => { calcs[dot] = { ...spec, file: current }; };
   const set = (dot, title, imp, members) => sets.push({ dot, title, imp, members, file: current });
   const reviewed = (dot, by, date) => { reviews[dot] = [by, date, current]; };
+  const drug = (d) => drugs.push(d);
   const add = (cat, items) => {
     for (const it of items) {
       let [dot, type, title, imp = '', icd = [], text = ''] = it;
@@ -39,7 +40,7 @@ function loadData() {
   const files = fs.readdirSync(DATA_DIR).filter((f) => f.endsWith('.js')).sort();
   for (const f of files) {
     current = f;
-    vm.runInNewContext(fs.readFileSync(path.join(DATA_DIR, f), 'utf8'), { add, calc, set, reviewed }, { filename: f });
+    vm.runInNewContext(fs.readFileSync(path.join(DATA_DIR, f), 'utf8'), { add, calc, set, reviewed, drug }, { filename: f });
   }
   // Note sets become rows of their own (type "Set"): the members' texts joined in order.
   const byDot = new Map(rows.map((r) => [r.dot, r]));
@@ -56,7 +57,7 @@ function loadData() {
   }
   const icdFile = path.join(DATA_DIR, 'icd10.json');
   const icd = fs.existsSync(icdFile) ? JSON.parse(fs.readFileSync(icdFile, 'utf8')) : {};
-  return { rows, icd, calcs, reviews, setErrors };
+  return { rows, icd, calcs, reviews, setErrors, drugs };
 }
 
 export function loadRows() { return loadData().rows; }
@@ -140,7 +141,7 @@ function build() {
   fs.rmSync(OUT, { recursive: true, force: true });
   fs.mkdirSync(path.join(OUT, 'icons'), { recursive: true });
   fs.mkdirSync(path.join(OUT, 'fonts'), { recursive: true });
-  for (const f of ['index.html', 'app.css', 'app.js', 'search.js', 'fill.js', 'config.js', 'manifest.webmanifest']) {
+  for (const f of ['index.html', 'review.html', 'app.css', 'app.js', 'search.js', 'fill.js', 'config.js', 'manifest.webmanifest']) {
     fs.copyFileSync(path.join(SRC, f), path.join(OUT, f));
   }
   for (const f of fs.readdirSync(path.join(SRC, 'icons'))) {
@@ -170,6 +171,7 @@ function build() {
     `export const ICD = ${JSON.stringify(usedIcd)};\n` +
     `export const CALCS = ${JSON.stringify(Object.fromEntries(Object.entries(data.calcs).map(([k, { file, ...v }]) => [k, v])))};\n` +
     `export const SETS = ${JSON.stringify(Object.fromEntries(rows.filter((r) => r.members).map((r) => [r.dot, r.members])))};\n` +
+    `export const DOSING = ${JSON.stringify(data.drugs)};\n` +
     `export const REVIEWS = ${JSON.stringify(Object.fromEntries(Object.entries(data.reviews).map(([k, [by, date]]) => [k, [by, date]])))};\n` +
     `export default ${JSON.stringify(compactRows(rows))};\n`);
 

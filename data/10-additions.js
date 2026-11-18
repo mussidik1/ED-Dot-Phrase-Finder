@@ -3,7 +3,7 @@
 add("Trauma & MSK", [
   ["*goutmdm", "MDM", "Acute monoarthritis / gout", "gout|m10.9|m10.071|joint pain|m25.50|swollen joint|monoarthritis|septic joint|septic arthritis|m00.9|podagra|joint swelling|hot joint", ["M10.9", "M25.50", "M00.9"],
 `MDM: ***-year-old with acute {right/left} *** pain, swelling and redness for ***. {Prior gout: ***.}
-Considered septic arthritis, gout/pseudogout, cellulitis, trauma/fracture, reactive arthritis, disseminated gonococcal infection and Lyme arthritis.
+Considered septic arthritis, gout/pseudogout, cellulitis, trauma/fracture, reactive arthritis, disseminated gonococcal infection and Lyme arthritis. {Not pursued further: *** because ***.}
 Fever ***. Range of motion: {painful but present / severely limited}. Skin: ***.
 {Arthrocentesis (see procedure note): WBC ***, crystals ***, Gram stain ***, culture sent.} {Labs: WBC ***, ESR/CRP ***, uric acid ***.} {X-ray: ***.}
 Assessment: {acute gout flare / septic arthritis not excluded: ***}.
@@ -11,7 +11,7 @@ Treatment: {NSAID *** / colchicine *** / prednisone ***} (chosen per renal funct
   ["*bitemdm", "MDM", "Animal bite", "dog bite|w54.0xxa|cat bite|w55.01xa|animal bite|bite wound|t14.8xxa|rabies|human bite|w50.3xxa", ["W54.0XXA", "W55.01XA", "T14.8XXA"],
 `MDM: ***-year-old bitten by {own/known/unknown/stray} {dog/cat/***} on the *** at ***.
 Wound: *** cm {puncture/laceration/avulsion}. Explored: {no tendon, joint, bone or neurovascular involvement; no foreign body (tooth) / ***}. {X-ray ***.}
-Considered closed-space hand infection, septic arthritis/tenosynovitis, fracture and crush injury.
+Considered closed-space hand infection, septic arthritis/tenosynovitis, fracture and crush injury. {Not pursued further: *** because ***.}
 Irrigated with *** mL normal saline. Closure: {left open / loosely approximated / primary closure of facial wound}.
 Antibiotic prophylaxis: {amoxicillin-clavulanate ×3–5 days for cat bite, hand/face, deep puncture, crush, or immunocompromise / not indicated because ***}.
 Tetanus: {up to date / Tdap or Td given / Tdap or Td plus TIG 250 units IM (tetanus-prone wound, fewer than 3 prior doses or unknown)}.
@@ -22,7 +22,7 @@ Hip examined for knee pain: ***. Considered SCFE (obligate external rotation wit
 X-ray AP and frog-leg lateral of both hips: ***. {Labs: WBC ***, ESR ***, CRP ***.} {Hip US: effusion ***.}
 Assessment: ***.
 {SCFE: non-weight-bearing, orthopedics (Dr. ***) consulted for urgent fixation / Transient synovitis: NSAIDs, return precautions, recheck in 24–48 h}.`],
-  ["nursemaid", "Procedure", "Radial head subluxation (nursemaid's elbow) reduction", "nursemaids elbow|nursemaid elbow|radial head subluxation|s53.031a|pulled elbow|elbow child not using arm", ["S53.031A", "S53.032A"],
+  ["*nursemaid", "Procedure", "Radial head subluxation (nursemaid's elbow) reduction", "nursemaids elbow|nursemaid elbow|radial head subluxation|s53.031a|pulled elbow|elbow child not using arm", ["S53.031A", "S53.032A"],
 `Procedure: reduction of radial head subluxation, {right/left}
 History of {pull/lift} at ***, child holding arm pronated and refusing to use it. Swelling, deformity, bruising or point tenderness: {none / ***}. {Fall, unwitnessed or unclear mechanism: X-ray and maltreatment screen considered: ***.}
 Technique: {hyperpronation / supination-flexion} with thumb over the radial head; palpable click felt: {yes/no}.
@@ -40,7 +40,7 @@ Removal: {positive pressure ("parent's kiss") / suction / alligator forceps / cu
   ["*dentaltrauma", "MDM", "Dental trauma / avulsed tooth", "dental trauma|avulsed tooth|s03.2xxa|knocked out tooth|tooth fracture|s02.5xxa|broken tooth|dental injury", ["S03.2XXA", "S02.5XXA"],
 `MDM: ***-year-old with dental injury to tooth #*** at ***.
 {Primary/permanent} tooth. Injury: {Ellis I enamel / Ellis II dentin / Ellis III pulp exposed / avulsion / luxation}.
-Considered aspiration of tooth fragment (CXR if missing ***), alveolar or mandible fracture, and intraoral laceration.
+Considered aspiration of tooth fragment (CXR if missing ***), alveolar or mandible fracture, and intraoral laceration. {Not pursued further: *** because ***.}
 {Avulsed permanent tooth: extraoral time ***; stored in ***; rinsed and reimplanted at ***, splinted to adjacent teeth. Primary teeth are not reimplanted.}
 {Exposed dentin/pulp: covered with ***.} Analgesia ***. Tetanus: {up to date / Tdap or Td given / plus TIG (tetanus-prone, fewer than 3 prior doses or unknown)}. {Antibiotic for reimplanted tooth: ***.}
 Dentist follow-up within {24 h / ***}; soft diet.`],
@@ -50,7 +50,7 @@ add("General", [
   ["*refill", "Note", "Medication refill", "medication refill|med refill|z76.0|refill|out of medication|ran out of meds|prescription refill|bridge prescription", ["Z76.0"],
 `MDM: ***-year-old presenting for refill of *** after {running out / losing access to PCP / ***} on ***.
 No acute complaints; vital signs reviewed: ***. Screened for complications of untreated condition: ***.
-{PDMP checked for controlled substance: ***.} {Controlled substances not prescribed from the ED.}
+{PDMP reviewed via CRISP before prescribing an opioid or benzodiazepine (required in Maryland before an initial prescription, with listed exceptions): *** / Controlled substances not prescribed from the ED.}
 Bridge prescription: *** for {7 / 14 / 30} days. PCP or clinic follow-up arranged: ***. Patient instructed this is a one-time bridge.`],
   ["*petition", "Note", "Emergency petition / involuntary hold", "emergency petition|involuntary hold|petition|5150|psych hold|involuntary commitment|emergency evaluation|ep|certificate", [],
 `Involuntary evaluation: The patient was {brought in on an emergency petition by *** / evaluated by me for an emergency petition}.

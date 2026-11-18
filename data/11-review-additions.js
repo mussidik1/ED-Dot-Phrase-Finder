@@ -64,7 +64,7 @@ add("Cardiac", [
   ["*pericarditis", "MDM", "Pericarditis / myocarditis", "pericarditis|i30.9|myocarditis|i40.9|pleuritic chest pain|positional chest pain|pericardial effusion|i31.39|friction rub", ["I30.9", "I40.9"],
 `MDM: ***-year-old with {sharp, pleuritic, positional} chest pain for ***. Recent viral illness ***.
 Diagnostic criteria (2 of 4): typical pain ***; friction rub ***; diffuse ST elevation/PR depression ***; new or worsening effusion ***.
-Considered STEMI (reciprocal changes, regional ST elevation: ***), myocarditis (troponin ***), tamponade (bedside echo ***; pulsus ***), aortic dissection, PE and pneumonia.
+Considered STEMI (reciprocal changes, regional ST elevation: ***), myocarditis (troponin ***), tamponade (bedside echo ***; pulsus ***), aortic dissection, PE and pneumonia. {Not pursued further: *** because ***.}
 High-risk features (fever >38 °C, subacute onset, large effusion, tamponade, no response to NSAIDs, elevated troponin, immunosuppression, anticoagulation, trauma): {none / ***}.
 Treatment: {ibuprofen 600 mg TID or aspirin 750–1000 mg TID ×1–2 weeks with GI protection, plus colchicine 0.5 mg BID (0.5 mg daily if <70 kg) ×3 months / ***}. Avoid strenuous exercise.
 Disposition: {discharge, cardiology/PCP follow-up in 1 week / admit for high-risk features}.`],

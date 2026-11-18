@@ -196,7 +196,19 @@ const setCases = [
   ['septic joint', ['goutmdm'], 1], ['nursemaid elbow', ['nursemaid'], 1], ['scfe', ['scfe'], 1], ['limp', ['scfe'], 1],
   ['foreign body nose', ['fbent'], 1], ['bead in ear', ['fbent'], 2], ['knocked out tooth', ['dentaltrauma'], 1],
   ['med refill', ['refill'], 1], ['emergency petition', ['petition'], 1], ['5150', ['petition'], 1],
-  ['spanish chest pain', ['cpdces'], 1], ['dolor de pecho', ['cpdces'], 1], ['fiebre', ['pedsfeverdces'], 1], ['español', ['cpdces', 'abddces', 'pedsfeverdces', 'gastrodces', 'backdces', 'concussdces', 'stonedces'], 1],
+  ['spanish chest pain', ['cpdces'], 1],
+  ['ciwa', ['ciwa'], 1], ['wells dvt', ['wellsdvt'], 1], ['add-rs', ['addrs'], 1], ['spesi', ['spesi'], 1], ['canadian syncope', ['csrs'], 1],
+  ['canadian c spine rule', ['ccsr'], 1], ['ottawa ankle', ['ottawa'], 1], ['kocher', ['kocher'], 1], ['glasgow blatchford', ['gbs'], 1],
+  ['westley', ['westley'], 1], ['hs troponin', ['hstrop'], 1], ['febrile infant', ['pecarnfi', 'pedsfever'], 2], ['dehydration', ['cds', 'pedsdehyd'], 2],
+  ['salicylate', ['salicylate'], 1], ['tca overdose', ['tca'], 1], ['calcium channel blocker overdose', ['bbccb'], 1], ['digoxin', ['digoxin'], 1],
+  ['serotonin syndrome', ['serotonin'], 1], ['carbon monoxide', ['comdm'], 1], ['hyponatremia', ['hypona'], 1], ['hypercalcemia', ['hyperca'], 1],
+  ['adrenal crisis', ['adrenal'], 1], ['thyroid storm', ['thyroidstorm'], 1], ['ruptured aaa', ['aaa'], 1], ['mesenteric ischemia', ['mesenteric'], 1],
+  ['necrotizing fasciitis', ['necfasc'], 1], ['doxy pep', ['doxypep'], 1], ['precipitous delivery', ['delivery'], 1], ['postpartum hemorrhage', ['pph'], 1],
+  ['pregnant trauma', ['traumapreg'], 1], ['peds dka', ['pedsdka'], 1], ['brue', ['brue'], 1], ['intussusception', ['intuss'], 1],
+  ['pediatric asthma', ['pedsasthma'], 1], ['button battery', ['batterymagnet'], 1], ['hip fracture', ['hipfx', 'fiblock'], 2], ['sexual assault', ['saexam'], 1],
+  ['chest tube', ['chesttube'], 1], ['paracentesis', ['paracentesis'], 1], ['transcutaneous pacing', ['pacing'], 1], ['subungual hematoma', ['trephination'], 1],
+  ['trauma activation', ['traumaact', 'transfusion'], 2], ['scribe', ['scribe'], 1], ['pdmp', ['pdmp'], 1], ['tylenol dose', ['pedsdose'], 1],
+  ['bronchiolitis discharge', ['bronchiodc'], 1], ['croup discharge', ['croupdc'], 1], ['bronquiolitis', ['bronchiodces'], 1], ['pedialyte', ['pedsvomitdc', 'pedsvomitdces', 'pedsdehyd'], 2], ['dolor de pecho', ['cpdces'], 1], ['fiebre', ['pedsfeverdces'], 1], ['español', rows.filter((r) => / \(Spanish\)$/.test(r.title)).map((r) => r.dot), 1],
 ];
 let fail = 0;
 for (const [q, want, n] of setCases) {

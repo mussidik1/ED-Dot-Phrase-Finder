@@ -6,14 +6,14 @@ add("ID & Sepsis", [
 Vitals: T ***, HR ***, BP ***, MAP ***, RR ***, SpO₂ ***. Initial lactate *** at ***; {repeat lactate *** at *** (required when initial >2) / not repeated: initial ≤2}.
 Organ dysfunction: ***.
 Blood cultures ×2 drawn at *** {before antibiotics / after antibiotics because ***}. Antibiotics *** started at ***.
-{30 mL/kg crystalloid (*** mL, based on *** weight) completed at *** for *** (hypotension or lactate ≥4) / reduced volume because ***}.
+{30 mL/kg crystalloid (*** mL, based on *** weight) at >125 mL/h, completed at *** for *** (hypotension or lactate ≥4) / Ordering *** mL (*** mL/kg) instead of 30 mL/kg because *** (e.g., ESRD, heart failure, fluid overload)}.
 {Septic shock (*** — hypotension persisting after fluids or lactate ≥4); norepinephrine started at ***; reassessment documented after fluids.}
 Source control: ***. Disposition: ***. {Critical care: see critical care statement.}`],
   ["sepsisreassess", "Exam", "Sepsis reassessment (SEP-1)", "sepsis reassessment|sep-1|sep1|perfusion exam|septic shock reassessment|fluid reassessment", [],
 `Sepsis reassessment at *** after initial fluid resuscitation: I reviewed vital signs and performed a focused exam. BP ***, HR ***, SpO₂ ***, capillary refill ***, peripheral pulses ***, skin ***, mental status ***, cardiopulmonary exam ***. {Repeat lactate ***.}`],
   ["*cellmdm", "MDM", "Cellulitis / abscess", "cellulitis|l03.90|l03.115|abscess|l02.91|skin infection|ssti|boil|mrsa", ["L03.90", "L02.91"],
 `MDM: ***-year-old with *** of erythema, warmth and tenderness to *** {with/without} fluctuance.
-Considered abscess, necrotizing soft tissue infection (no pain out of proportion, crepitus, bullae, rapid spread or systemic toxicity), septic arthritis, DVT, gout, contact dermatitis and venous stasis.
+Considered abscess, necrotizing soft tissue infection (no pain out of proportion, crepitus, bullae, rapid spread or systemic toxicity), septic arthritis, DVT, gout, contact dermatitis and venous stasis. {Not pursued further: *** because ***.}
 {Bedside US: ***.} {I&D performed (see procedure note).}
 Margins marked. Treatment: *** (purulent: MRSA coverage; nonpurulent: streptococcal coverage).
 Recheck in 48 hours; return for spreading redness, fever or worsening pain.`],
@@ -24,7 +24,7 @@ Testing: GC/CT NAAT, trichomonas, {HIV, syphilis, hepatitis C} sent.
 Treatment: {ceftriaxone 500 mg IM (1 g if ≥150 kg), doxycycline 100 mg BID ×7 days / metronidazole *** / ***}. Expedited partner therapy discussed; abstain for 7 days after treatment and until partners treated. Results callback confirmed: ***.`],
   ["phmdm", "MDM", "Pharyngitis", "pharyngitis|sore throat|j02.9|strep throat|j02.0|tonsillitis|j03.90|peritonsillar abscess|pta|mono", ["J02.9", "J02.0", "J03.90"],
 `MDM: ***-year-old with sore throat for ***. Centor/McIsaac ***.
-Considered peritonsillar/retropharyngeal abscess (no trismus, uvular deviation, muffled voice or neck stiffness), epiglottitis (no drooling, stridor or tripoding), Lemierre's, mononucleosis, acute HIV and gonococcal pharyngitis.
+Considered peritonsillar/retropharyngeal abscess (no trismus, uvular deviation, muffled voice or neck stiffness), epiglottitis (no drooling, stridor or tripoding), Lemierre's, mononucleosis, acute HIV and gonococcal pharyngitis. {Not pursued further: *** because ***.}
 Rapid strep ***. Tolerating secretions and PO.
 Assessment: {streptococcal pharyngitis: *** / viral pharyngitis: supportive care}. {Dexamethasone *** for symptom relief.}`],
 ]);
@@ -32,7 +32,7 @@ Assessment: {streptococcal pharyngitis: *** / viral pharyngitis: supportive care
 add("Tox & Environmental", [
   ["*odmdm", "MDM", "Opioid overdose", "opioid overdose|od|overdose|t40.2x1a|t40.411a|fentanyl overdose|heroin overdose|naloxone|narcan|t40.601a", ["T40.601A", "T40.411A", "T40.2X1A"],
 `MDM: ***-year-old found {unresponsive/with decreased respirations} after suspected opioid use, ***. Naloxone *** given by {EMS/bystander/ED} with response ***.
-Considered co-ingestants (acetaminophen ***, salicylate ***, ethanol ***), aspiration, hypoglycemia, head injury, hypothermia, rhabdomyolysis and noncardiogenic pulmonary edema. ECG ***.
+Considered co-ingestants (acetaminophen ***, salicylate ***, ethanol ***), aspiration, hypoglycemia, head injury, hypothermia, rhabdomyolysis and noncardiogenic pulmonary edema. ECG ***. {Not pursued further: *** because ***.}
 Observed for *** hours after last naloxone; mental status and respiratory status at baseline, SpO₂ *** on room air.
 Harm reduction: naloxone kit {dispensed/prescribed}, overdose risk counseling, {buprenorphine *** initiated / offered and declined}, treatment referral ***.`],
   ["ingestmdm", "MDM", "Intentional ingestion / poisoning", "ingestion|overdose|intentional ingestion|poisoning|t50.901a|t39.1x2a|acetaminophen overdose|tylenol overdose|t42.4x2a|suicide attempt ingestion|t14.91xa", ["T50.902A", "T39.1X2A"],
@@ -44,13 +44,13 @@ Treatment: ***. {NAC started at *** per Rumack-Matthew nomogram.}
 Psychiatric evaluation {once medically clear / ***}. Safety: 1:1 sitter, belongings secured.`],
   ["etohmdm", "MDM", "Alcohol intoxication", "alcohol intoxication|etoh|intoxicated|drunk|f10.129|f10.920|ethanol|acute intoxication", ["F10.129", "F10.920"],
 `MDM: ***-year-old with alcohol intoxication. Ethanol ***. Glucose ***.
-Considered head injury, hypoglycemia, co-ingestion, toxic alcohols, withdrawal, Wernicke's, infection and hypothermia. Secondary survey for trauma: ***.
+Considered head injury, hypoglycemia, co-ingestion, toxic alcohols, withdrawal, Wernicke's, infection and hypothermia. Secondary survey for trauma: ***. {Not pursued further: *** because ***.}
 Observed and reassessed serially. At ***: clinically sober — ambulating with steady gait, speech clear, alert and oriented, tolerating PO, able to make an informed decision.
 Discharged {with responsible adult / ***}. Substance use counseling and resources provided.`],
   ["withdrawal", "MDM", "Alcohol withdrawal", "alcohol withdrawal|f10.230|f10.239|ciwa|dts|delirium tremens|f10.231|withdrawal seizure|etoh withdrawal", ["F10.230", "F10.239", "F10.231"],
 `MDM: ***-year-old with heavy daily alcohol use (last drink ***) presenting with ***. CIWA-Ar ***.
 History of withdrawal seizures ***, DTs ***.
-Considered sepsis, hypoglycemia, intracranial injury, hepatic encephalopathy, toxic ingestion and thyrotoxicosis.
+Considered sepsis, hypoglycemia, intracranial injury, hepatic encephalopathy, toxic ingestion and thyrotoxicosis. {Not pursued further: *** because ***.}
 Treatment: {phenobarbital *** / benzodiazepine ***}, thiamine *** mg before glucose, folate, multivitamin, electrolyte repletion.
 Disposition: {admit for withdrawal management / discharge with outpatient withdrawal plan and resources: CIWA <10, no high-risk history, ***}.`],
   ["hypothermia", "MDM", "Hypothermia / cold exposure", "hypothermia|t68.xxxa|cold exposure|frostbite|t33.90xa|environmental exposure|found outside", ["T68.XXXA", "T33.90XA"],
@@ -62,7 +62,7 @@ Disposition: ***.`],
   ["heatillness", "MDM", "Heat illness", "heat stroke|heat exhaustion|t67.01xa|t67.5xxa|hyperthermia|heat illness|t67.0", ["T67.01XA", "T67.5XXA"],
 `MDM: ***-year-old with *** after exposure to heat {/ exertion}. Core temperature ***. Mental status ***.
 {Heat stroke: CNS dysfunction with temperature >40 °C} / {heat exhaustion: normal mental status}.
-Considered sepsis, meningitis, thyroid storm, serotonin syndrome, NMS, sympathomimetic toxicity and anticholinergic toxicity.
+Considered sepsis, meningitis, thyroid storm, serotonin syndrome, NMS, sympathomimetic toxicity and anticholinergic toxicity. {Not pursued further: *** because ***.}
 Cooling: {cold-water immersion / evaporative cooling / ice packs} started at ***, stopped at 38.5–39 °C. Labs: CK ***, BMP ***, LFTs ***, coags ***.
 Disposition: ***.`],
   ["allergic", "MDM", "Allergic reaction / anaphylaxis", "allergic reaction|anaphylaxis|t78.2xxa|t78.40xa|urticaria|hives|l50.9|angioedema|t78.3xxa|epinephrine|food allergy|t78.00xa", ["T78.2XXA", "T78.40XA", "L50.9", "T78.3XXA"],
@@ -89,18 +89,18 @@ Ate a full meal and glucose remained >*** over *** hours of observation.
 Disposition: discharge with responsible adult, medication adjustment ***, PCP/endocrine follow-up / admit ***.`],
   ["sicklemdm", "MDM", "Sickle cell pain crisis", "sickle cell|sickle cell crisis|vaso occlusive crisis|voc|d57.00|d57.219|acute chest|d57.01|sickle cell pain", ["D57.00", "D57.01"],
 `MDM: ***-year-old with sickle cell disease ({HbSS/HbSC/***}) presenting with pain typical of prior vaso-occlusive crises, ***.
-Considered acute chest syndrome (CXR ***, SpO₂ ***), stroke, splenic sequestration, aplastic crisis, osteomyelitis/septic joint, priapism, cholecystitis and infection (temp ***).
+Considered acute chest syndrome (CXR ***, SpO₂ ***), stroke, splenic sequestration, aplastic crisis, osteomyelitis/septic joint, priapism, cholecystitis and infection (temp ***). {Not pursued further: *** because ***.}
 Hgb *** (baseline ***), reticulocytes ***.
 Analgesia per individualized pain plan: *** at ***, reassessed at ***. IV fluids ***.
 Disposition: ***.`],
   ["anemiamdm", "MDM", "Symptomatic anemia", "anemia|d64.9|low hemoglobin|d50.0|iron deficiency anemia|d62|transfusion|blood transfusion", ["D64.9", "D50.0", "D62"],
 `MDM: ***-year-old with Hgb *** (baseline ***), symptoms ***.
-Considered GI bleeding (rectal exam ***), menorrhagia, hemolysis, marrow failure, nutritional deficiency and CKD. MCV ***, retic ***, iron studies ***.
+Considered GI bleeding (rectal exam ***), menorrhagia, hemolysis, marrow failure, nutritional deficiency and CKD. MCV ***, retic ***, iron studies ***. {Not pursued further: *** because ***.}
 Hemodynamics: ***.
 Plan: {transfuse *** units PRBC; consent obtained / no transfusion indicated, iron ***}. Disposition: ***.`],
-  ["anticoagbleed", "MDM", "Bleeding on anticoagulation / reversal", "bleeding on anticoagulation|supratherapeutic inr|r79.1|elevated inr|warfarin|eliquis|apixaban|reversal|kcentra|d68.32|anticoagulant bleeding", ["R79.1", "D68.32"],
+  ["anticoagbleed", "MDM", "Bleeding on anticoagulation / reversal", "bleeding on anticoagulation|supratherapeutic inr|r79.1|elevated inr|warfarin|eliquis|apixaban|xarelto|rivaroxaban|reversal|kcentra|4f-pcc|pcc|d68.32|anticoagulant bleeding", ["R79.1", "D68.32"],
 `MDM: ***-year-old on {warfarin/apixaban/rivaroxaban/dabigatran/***} (last dose ***) with ***. INR ***.
 Bleeding: {major/life-threatening: *** / minor}.
-Reversal: {warfarin, major bleed: 4F-PCC *** units (INR-based 25/35/50 units/kg or fixed dose per protocol) + vitamin K 10 mg IV / apixaban or rivaroxaban, major bleed: 4F-PCC 50 units/kg (or fixed dose per protocol) or andexanet *** if available locally / dabigatran: idarucizumab 5 g IV / supratherapeutic INR without major bleed: hold warfarin ± vitamin K *** mg PO / held next dose only}.
+Reversal: {warfarin, major bleed: 4F-PCC *** units (INR-based 25/35/50 units/kg or fixed dose per protocol) + vitamin K 10 mg IV / apixaban or rivaroxaban, major bleed: 4F-PCC 50 units/kg (or fixed dose per protocol); andexanet was withdrawn from the US market in Dec 2025 / dabigatran: idarucizumab 5 g IV / supratherapeutic INR without major bleed: hold warfarin ± vitamin K *** mg PO / held next dose only}.
 Indication for anticoagulation (***) and thrombotic risk discussed. Disposition: ***.`],
 ]);

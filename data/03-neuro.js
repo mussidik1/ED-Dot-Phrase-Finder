@@ -4,20 +4,20 @@ add("Neuro", [
   ["*strokemdm", "MDM", "Acute stroke / stroke alert", "stroke|cva|stroke alert|code stroke|i63.9|acute ischemic stroke|facial droop|weakness|aphasia|tpa|tnk|thrombolysis|lvo|thrombectomy", ["I63.9"],
 `MDM: ***-year-old with acute {right/left} *** deficit. Last known well ***. Stroke alert activated at ***.
 NIHSS ***. Point-of-care glucose ***.
-Considered hypoglycemia, seizure/Todd's paralysis, ICH, complex migraine, conversion, mass lesion and infection.
+Considered hypoglycemia, seizure/Todd's paralysis, ICH, complex migraine, conversion, mass lesion and infection. {Not pursued further: *** because ***.}
 CT head: ***. CTA head/neck: {LVO at *** / no LVO}. {CT perfusion ***}.
-Thrombolysis: {tenecteplase 0.25 mg/kg (*** mg, max 25 mg) single IV bolus at *** (door-to-needle *** min) after reviewing contraindications and discussing risks/benefits; BP kept <185/110 before and <180/105 for 24 h after / not given because ***}.
+Thrombolysis (2026 AHA/ASA guideline, within 4.5 h): {tenecteplase 0.25 mg/kg (*** mg, max 25 mg) single IV bolus / alteplase 0.9 mg/kg (*** mg, max 90 mg), 10% bolus then infusion over 60 min} at *** (door-to-needle *** min) after reviewing contraindications and discussing risks/benefits; BP <185/110 before and <180/105 for 24 h after (avoid intensive SBP lowering <140). Thrombectomy evaluation not delayed for thrombolysis response. / Not given because ***.
 Neurology (Dr. ***) and {neurointerventional team ***} consulted. BP goal ***.
 Disposition: ***. {Critical care: see critical care statement.}`],
   ["tiamdm", "MDM", "TIA", "tia|transient ischemic attack|g45.9|resolved stroke symptoms|transient weakness|transient numbness", ["G45.9"],
 `MDM: ***-year-old with transient *** lasting ***, now resolved. NIHSS 0.
-Considered stroke, hypoglycemia, seizure, migraine aura, syncope and peripheral nerve lesion.
+Considered stroke, hypoglycemia, seizure, migraine aura, syncope and peripheral nerve lesion. {Not pursued further: *** because ***.}
 ABCD² ***. CT head ***; CTA head/neck ***; ECG ***; glucose ***.
 ABCD² is not used alone to decide disposition. Plan: {admit/observation for expedited workup / ED-based TIA pathway with MRI, vessel imaging, echo and monitoring}. Antiplatelet: {aspirin + clopidogrel load, then dual therapy for 21 days (high-risk TIA/minor stroke, POINT/CHANCE) / aspirin *** / ***}.`],
   ["*hamdm", "MDM", "Headache", "headache|ha|r51.9|migraine|g43.909|tension headache|cephalgia|head pain", ["R51.9", "G43.909"],
 `MDM: ***-year-old with headache, onset ***, similar to prior headaches: {yes/no}.
 Red flags screened: {no thunderclap onset, fever/meningismus, focal deficit, papilledema, immunocompromise, pregnancy/postpartum, anticoagulation, age >50 new onset, trauma, or exertional/positional component / ***}.
-Considered SAH, meningitis, ICH, venous sinus thrombosis, dissection, CO poisoning, temporal arteritis, hypertensive emergency, preeclampsia and acute angle-closure glaucoma.
+Considered SAH, meningitis, ICH, venous sinus thrombosis, dissection, CO poisoning, temporal arteritis, hypertensive emergency, preeclampsia and acute angle-closure glaucoma. {Not pursued further: *** because ***.}
 {No imaging indicated per exam and history / CT head ***}.
 Assessment: {primary headache, likely migraine/tension type / ***}.
 Treatment: ***. Reassessment: ***. Discharge with follow-up and return precautions.`],
@@ -29,13 +29,13 @@ Non-contrast CT head obtained {within 6 hours of onset on a modern scanner, read
 Shared decision-making documented: ***.`],
   ["*seizmdm", "MDM", "Seizure", "seizure|sz|r56.9|g40.909|epilepsy|convulsion|first time seizure|breakthrough seizure|new onset seizure", ["R56.9", "G40.909"],
 `MDM: ***-year-old with {first-time/known epilepsy, breakthrough} seizure. Witnessed description: ***. Duration ***. Now at neurologic baseline: {yes/***}.
-Considered syncope, hypoglycemia, electrolyte abnormality, toxic ingestion or withdrawal, intracranial lesion/ICH, infection, eclampsia and nonadherence.
+Considered syncope, hypoglycemia, electrolyte abnormality, toxic ingestion or withdrawal, intracranial lesion/ICH, infection, eclampsia and nonadherence. {Not pursued further: *** because ***.}
 Glucose ***; labs ***; {AED level ***}; {CT head ***}; {pregnancy test ***}.
 Plan: {load/resume ***; neurology follow-up / admit ***}.
 Counseled on state driving restrictions and seizure safety (no driving, swimming alone, heights or bathing alone) until cleared by neurology.`],
   ["*vertmdm", "MDM", "Dizziness / vertigo", "dizziness|vertigo|r42|bppv|h81.10|vestibular neuritis|lightheaded|dizzy|hints exam|posterior circulation", ["R42", "H81.10"],
 `MDM: ***-year-old with {episodic triggered / continuous acute / spontaneous episodic} dizziness for ***.
-Considered posterior circulation stroke, vertebral dissection, BPPV, vestibular neuritis, Ménière's, arrhythmia, orthostasis, anemia, hypoglycemia and medication effect.
+Considered posterior circulation stroke, vertebral dissection, BPPV, vestibular neuritis, Ménière's, arrhythmia, orthostasis, anemia, hypoglycemia and medication effect. {Not pursued further: *** because ***.}
 Exam: nystagmus ***; HINTS {benign: unidirectional horizontal nystagmus, negative test of skew, abnormal head impulse / concerning: *** / not applicable: HINTS is validated only for acute continuous vertigo with ongoing nystagmus, by a trained examiner}; Dix-Hallpike ***; gait ***; no dysarthria, dysmetria or other focal deficit.
 {MRI/CTA ***}.
 Assessment: ***. Treatment: {Epley maneuver / meclizine / ***}. Return precautions for new neurologic symptoms.`],
@@ -51,7 +51,7 @@ Disposition: neuro ICU. {Critical care: see critical care statement.}`],
 {Empiric antibiotics given before LP/imaging at ***: ceftriaxone, vancomycin, dexamethasone, plus *** (ampicillin if age >50 or immunocompromised; acyclovir if encephalitis suspected).}`],
   ["ams", "MDM", "Altered mental status", "altered mental status|ams|r41.82|confusion|delirium|encephalopathy|r41.0|unresponsive|lethargy", ["R41.82", "R41.0"],
 `MDM: ***-year-old with altered mental status, baseline per *** is ***.
-Differential (AEIOU TIPS): alcohol/toxins, electrolytes/endocrine (glucose, Na, Ca, thyroid), infection (UTI, pneumonia, meningitis, sepsis), opioids/overdose, uremia/hepatic encephalopathy, trauma/ICH, insulin, psychiatric, stroke/seizure, hypoxia/hypercarbia.
+Differential (AEIOU TIPS): alcohol/toxins, electrolytes/endocrine (glucose, Na, Ca, thyroid), infection (UTI, pneumonia, meningitis, sepsis), opioids/overdose, uremia/hepatic encephalopathy, trauma/ICH, insulin, psychiatric, stroke/seizure, hypoxia/hypercarbia. {Not pursued further: *** because ***.}
 Workup: glucose ***, CBC ***, BMP ***, LFTs/ammonia ***, UA ***, {VBG ***}, {tox ***}, {CT head ***}, {CXR ***}.
 Assessment: ***. Plan: ***.`],
   ["bellmdm", "MDM", "Bell's palsy", "bells palsy|bell palsy|facial palsy|g51.0|facial nerve palsy|facial droop", ["G51.0"],
